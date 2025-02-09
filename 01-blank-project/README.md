@@ -23,6 +23,28 @@ To start a Khanon.js application, you need to create a class, extend [AppInterfa
 
 The application starts in the mandatory [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback. Use the [KJS](https://khanonjs.com/api-docs/modules/kjs.KJS.html) namespace or the app [switchState](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#switchState) method to start running states and scenes.
 
+```
+@App({
+  name: '01-blank-project'
+})
+export class MyApp extends AppInterface {
+  onStart() {
+    // Entrypoint of your app
+
+    // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
+    Logger.trace('Hello world!')
+  }
+
+  onClose() {
+    Logger.info('App onClose')
+  }
+
+  onError(error?: string) {
+    Logger.error('App onError:', error)
+  }
+}
+```
+
 ## `public` folder
 
 This is the folder that will be published to the server.
