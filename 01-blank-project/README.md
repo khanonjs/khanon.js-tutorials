@@ -3,17 +3,17 @@ Starts a project from scratch with minimum codebase.
 
 This tutorial is found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
-## Project structure
+# Project structure
 
 A Khanon.js project is built by the `root` files, `src` folder, and `public` folder.
 
-### `root` files
+## `root` files
 
 It contains the `package.json` file with basic dependencies, `tsconfig.json` with typescript configuration, and other files you want to add to your project such *eslint*, *tests*, etc.
 
 *Webpack files and package.json scripts are temporal, it will change on production release.*
 
-### `src` folder
+## `src` folder
 
 Source files are stored in this folder.
 
@@ -23,14 +23,14 @@ To start a Khanon.js application, you need to create a class, extend [AppInterfa
 
 The application starts in the mandatory [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback. Use the [KJS](https://khanonjs.com/api-docs/modules/kjs.KJS.html) namespace or the app [switchState](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#switchState) method to start running states and scenes.
 
-### `public` folder
+## `public` folder
 
 This is the folder that will be published to the server.
 
 It contains `index.html`, the `assets` folder, any any other files you want to publish to your server.
 
 
-## Building and publishing the project
+# Building and publishing the project
 
 Build the project running the `npm run build` script from the root folder.
 
