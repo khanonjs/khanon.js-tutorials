@@ -1,21 +1,22 @@
 import {
   App,
   AppInterface,
-  KJS,
   Logger
 } from '@khanonjs/engine'
 
 @App({
-  name: 'Khanon.js blank project'
+  name: '01-blank-project'
 })
 export class MyApp extends AppInterface {
   onStart() {
     // Entrypoint of your app
-    Logger.trace('App onStart')
+
+    // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
+    Logger.trace('Hello world!')
   }
 
   onClose() {
-    Logger.trace('App onClose')
+    Logger.info('App onClose')
   }
 
   onError(error?: string) {
