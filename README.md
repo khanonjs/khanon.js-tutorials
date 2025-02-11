@@ -6,7 +6,7 @@ Clone this repo to your local drive to get access to all tutorials.
 
 Khanon.js website: [https://www.khanonjs.com](https://www.khanonjs.com)
 
-## 02 Blank project
+## 01 Blank project
 Start a project from scratch with the minimum codebase.
 
 This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
