@@ -1,11 +1,11 @@
 # Overview
-Starts a project from scratch with minimum codebase.
+Start a project from scratch with the minimum codebase.
 
 This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
 # Project structure
 
-A Khanon.js project is built by the `root` files, `src` folder, and `public` folder.
+A Khanon.js project is made by the `root` files, `src` folder, and `public` folder.
 
 ## `root` files
 

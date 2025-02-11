@@ -1,7 +1,7 @@
 {
-  "name": "khanonjs-01-blank-project",
+  "name": "01-blank-project",
   "version": "0.0.1",
-  "description": "Khanon.js blank project",
+  "description": "Khanon.js tutorial - 01 Blank project",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",
