@@ -51,6 +51,12 @@ This is the folder that will be published to the server.
 
 It contains `index.html`, the `assets` folder, any any other files you want to publish to your server.
 
+# Running the application
+
+To run the application just go to the root folder and run the `start` npm script:
+
+`npm run start`
+
 # Building and publishing the project
 
 Build the project running the `npm run build` script from the root folder.

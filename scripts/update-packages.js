@@ -26,7 +26,7 @@ tutorials.forEach(tutorialName => {
           console.log(`Error saving package in path '${path}':`, err)
           process.exit(1)
       } else {
-         console.log(`Package updated in file '${tutorialName}'.`)
+         console.log(`Package updated in tutorial '${tutorialName}'.`)
       }
    })
 
