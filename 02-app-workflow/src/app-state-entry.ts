@@ -10,7 +10,13 @@ import { SceneEntry } from './scenes/scene-entry'
 export class AppStateEntry extends AppStateInterface {
   onStart(): void {
     KJS.Scene.load(SceneEntry).onComplete.add(() => {
-      KJS.Scene.start(SceneEntry)
+      setTimeout(() => {
+        // Hide the loading screen
+        window.document.getElementById('loading-screen').style.display = 'none'
+
+        // Start SceneEntry
+        KJS.Scene.start(SceneEntry)
+      }, 3000)
     })
   }
 }

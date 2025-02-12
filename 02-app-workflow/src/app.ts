@@ -15,6 +15,9 @@ export class MyApp extends AppInterface {
     // Entrypoint of your app
     Logger.info('App onStart')
 
+    // Show loading screen
+    window.document.getElementById('loading-screen').style.display = 'flex'
+
     // Goto AppStateEntry
     this.switchState(AppStateEntry, {})
   }
