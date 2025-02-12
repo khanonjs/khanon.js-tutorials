@@ -1,18 +1,22 @@
 import {
   App,
   AppInterface,
+  KJS,
   Logger
 } from '@khanonjs/engine'
 
+import { AppStateEntry } from './app-state-entry'
+
 @App({
-  name: '01-blank-project'
+  name: '02-app-workflow'
 })
 export class MyApp extends AppInterface {
   onStart() {
     // Entrypoint of your app
+    Logger.info('App onStart')
 
-    // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
-    Logger.trace('Hello world!')
+    // Goto AppStateEntry
+    this.switchState(AppStateEntry, {})
   }
 
   onClose() {

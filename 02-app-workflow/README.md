@@ -1,5 +1,5 @@
 # Overview
-Start a 2D application, render your first sprites and 2D animations.
+This tutorial covers how to drive the workflow of an application. From the entry point, to start the first scene, switch of scenes and states, and how to show a screen on a critical error.
 
-This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-starting-2d-application).
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow)
 

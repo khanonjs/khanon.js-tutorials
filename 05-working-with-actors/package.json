@@ -11,7 +11,7 @@
     "build:clean": "rimraf dist"
   },
   "devDependencies": {
-    "@babylonjs/inspector": "~7.2.1",
+    "@babylonjs/inspector": "~7.47.2",
     "copy-webpack-plugin": "^12.0.2",
     "html-webpack-plugin": "^5.3.1",
     "rimraf": "^3.0.2",
@@ -22,7 +22,8 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
-    "@babylonjs/core": "~7.2.1",
-    "@khanonjs/engine": "^0.0.66"
+    "@babylonjs/core": "~7.47.2",
+    "@babylonjs/gui": "~7.47.2",
+    "@khanonjs/engine": "0.0.123"
   }
 }

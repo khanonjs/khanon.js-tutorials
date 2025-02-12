@@ -1,7 +1,7 @@
 # Overview
 Start a project from scratch with the minimum codebase.
 
-This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project)
 
 # Project structure
 
