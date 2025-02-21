@@ -11,14 +11,22 @@ import { AppStateEntry } from './app-state-entry'
   name: '02-app-workflow'
 })
 export class MyApp extends AppInterface {
+  static showLoadingSceen() {
+    // window.document.getElementById('loading-screen').style.display = 'flex'  // 8a8f descomentar
+  }
+
+  static hideLoadingScreen() {
+    // window.document.getElementById('loading-screen').style.display = 'none'  // 8a8f descomentar
+  }
+
   onStart() {
-    // Entrypoint of your app
+    // Entrypoint of the app
     Logger.info('App onStart')
 
     // Show loading screen
-    window.document.getElementById('loading-screen').style.display = 'flex'
+    MyApp.showLoadingSceen()
 
-    // Goto AppStateEntry
+    // Go to AppStateEntry
     this.switchState(AppStateEntry, {})
   }
 

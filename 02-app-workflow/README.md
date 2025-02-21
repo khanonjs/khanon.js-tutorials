@@ -40,7 +40,14 @@ export class MyApp extends AppInterface {
 }
 ```
 
-Now `AppStateEntry` has the control of the application. Bear in mind every time we switch to a new state, the same process will be exedcuted from the begginig starting from the state's [`onStart`](https://khanonjs.com/api-docs/classes/decorators_app_app_state.AppStateInterface.html#onStart) method. States are not persistent, once one is finished, it is removed and another starts from scratch.
+Now `AppStateEntry` has the control of the application. Bear in mind every time we switch to a state, it will be exedcuted from scratch from the state's [`onStart`](https://khanonjs.com/api-docs/classes/decorators_app_app_state.AppStateInterface.html#onStart) method. States are not persistent, once one is finished, it is removed and another starts.
+
+Before starting the first scene, let's see how to configure it. To create a scene, you need to decorate a class with Scene decorator, and declare the assets, elements and configuration it will use:
+
+**src/scene/scene-entry.ts**
+```
+hola
+```
 
 It is time to load and start our first scene. Use the global [KJS](https://khanonjs.com/api-docs/modules/kjs.KJS.html) object to work with scenes. Add these lines to the state's *onStart* method:
 

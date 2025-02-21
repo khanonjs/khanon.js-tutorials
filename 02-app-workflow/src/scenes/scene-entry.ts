@@ -10,4 +10,9 @@ import { SceneEntryGUI } from './scene-entry-gui'
     SceneEntryGUI
   ]
 })
-export class SceneEntry extends SceneInterface {}
+export class SceneEntry extends SceneInterface {
+  onStart(): void {
+      const gui = [...this.guis][0] as SceneEntryGUI
+      gui.setSceneName(this.getClassName())
+  }
+}

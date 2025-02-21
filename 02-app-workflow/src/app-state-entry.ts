@@ -4,6 +4,7 @@ import {
   KJS
 } from '@khanonjs/engine'
 
+import { MyApp } from './app'
 import { SceneEntry } from './scenes/scene-entry'
 
 @AppState()
@@ -12,11 +13,11 @@ export class AppStateEntry extends AppStateInterface {
     KJS.Scene.load(SceneEntry).onComplete.add(() => {
       setTimeout(() => {
         // Hide the loading screen
-        window.document.getElementById('loading-screen').style.display = 'none'
+        MyApp.hideLoadingScreen()
 
         // Start SceneEntry
         KJS.Scene.start(SceneEntry)
-      }, 3000)
+      }, 0 /*3000*/)  // 8a8f descomentar
     })
   }
 }
