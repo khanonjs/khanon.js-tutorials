@@ -1,7 +1,13 @@
 # Overview
-In this tutorial we will see how to drive the workflow of an application. From the entry point, to load and start scenes, switch of states, and how to show loading or critical error screens.
+In this tutorial we will see how to drive the workflow of an application simulating how a video game workflow would be. From the entry point, to show loading screens,  load and start scenes, switch of states, and using GUIs.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow)
+
+# Workflow diagram
+
+Let's analyze the workflow our app will follow in this tutorial:
+
+![App worfflow](./workflow-diagram.jpg?raw=true "App worfflow")
 
 # Starting the app
 
