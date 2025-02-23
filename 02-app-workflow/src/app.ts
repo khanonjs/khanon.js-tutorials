@@ -5,7 +5,7 @@ import {
   Logger
 } from '@khanonjs/engine'
 
-import { AppStateEntry } from './app-state-entry'
+import { AppStateEntry } from './app-states/state-game-intro'
 
 @App({
   name: '02-app-workflow'
