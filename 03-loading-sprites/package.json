@@ -1,7 +1,7 @@
 {
-  "name": "01-blank-project",
+  "name": "03-loading-sprites",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 01 Blank project",
+  "description": "Khanon.js tutorial - 03 Loading 2D sprites",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",

@@ -1,7 +1,7 @@
 {
-  "name": "01-blank-project",
+  "name": "05-app-workflow",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 01 Blank project",
+  "description": "Khanon.js tutorial - 05 App workflow",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",
@@ -24,6 +24,6 @@
   "dependencies": {
     "@babylonjs/core": "~7.47.2",
     "@babylonjs/gui": "~7.47.2",
-    "@khanonjs/engine": "0.0.126"
+    "@khanonjs/engine": "^0.0.130"
   }
 }

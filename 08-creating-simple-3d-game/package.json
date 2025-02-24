@@ -1,7 +1,7 @@
 {
-  "name": "01-blank-project",
+  "name": "08-creating-simple-3d-game",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 01 Blank project",
+  "description": "Khanon.js tutorial - 08 Creating a simple 3D game",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",

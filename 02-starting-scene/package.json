@@ -1,7 +1,7 @@
 {
-  "name": "01-blank-project",
+  "name": "02-starting-scene",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 01 Blank project",
+  "description": "Khanon.js tutorial - 02 Starting a scene",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",

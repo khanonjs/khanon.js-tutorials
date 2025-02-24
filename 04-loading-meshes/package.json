@@ -1,7 +1,7 @@
 {
-  "name": "01-blank-project",
+  "name": "04-loading-meshes",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 01 Blank project",
+  "description": "Khanon.js tutorial - 04 Loading 2D meshes",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",

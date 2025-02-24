@@ -3,12 +3,13 @@ const path = require('path');
 
 const tutorials = [
   '01-blank-project',
-  '02-app-workflow',
-  '03-adding-2d-sprites',
-  '04-adding-3d-meshes',
-  '05-working-with-actors',
-  '06-creating-simple-2d-game',
-  '07-creating-simple-3d-game',
+  '02-starting-scene',
+  '03-loading-sprites',
+  '04-loading-meshes',
+  '05-app-workflow',
+  '06-working-with-actors',
+  '07-creating-simple-2d-game',
+  '08-creating-simple-3d-game',
 ]
 
 const babylonjs_version = '~7.47.2'

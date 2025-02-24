@@ -1,7 +1,7 @@
 {
-  "name": "02-app-workflow",
+  "name": "06-working-with-actors",
   "version": "0.0.1",
-  "description": "Khanon.js tutorial - 02 App workflow",
+  "description": "Khanon.js tutorial - 06 Working with actors",
   "main": "index.html",
   "scripts": {
     "start": "webpack serve --port 8080 --config webpack.dev.js",
