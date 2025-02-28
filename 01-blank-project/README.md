@@ -1,11 +1,11 @@
 # Overview
 Start a project from scratch with the minimum codebase.
 
-Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project)
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
 # Project structure
 
-A Khanon.js project use to contains the `root` files, `src` folder, and `public` folder.
+A Khanon.js project typically contains the `root` files, `src` folder, and `public` folder.
 
 ## `root` files
 
@@ -17,7 +17,7 @@ It contains the [package.json](https://docs.npmjs.com/cli/v11/configuring-npm/pa
 
 Source files are placed in this folder.
 
-`app.ts` is usually placed in the root of *src* folder. This is the place where the application starts.
+`app.ts` is usually placed in the root of *src*. This is the place where the application starts.
 
 To start a Khanon.js application, you need to create a class, extend [AppInterface](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html) and decorate it with the [App decorator](https://khanonjs.com/api-docs/functions/decorators_app.App.html).
 
@@ -61,8 +61,10 @@ To run the application just go to the *root* folder and run the `start` npm scri
 
 # Building and publishing the project
 
-Build the project running the `npm run build` script from the root folder.
+Build the project running the `build` npm script:
 
-Once the app is built, `dist` folder is be created with the compiled `app.js` file and the content of `public` folder.
+`npm run build`
 
-The content of `dist` folder is what you have to copy to your server. After that just run `index.html` in any browser to start the application.
+Once the app is built, `dist` folder is created with the compiled `app.js` and the content of `public` folder.
+
+The content of *dist* folder is what you have to copy to your server. After that just run `index.html` in any browser to start the application.

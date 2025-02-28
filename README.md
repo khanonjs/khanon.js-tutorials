@@ -9,9 +9,9 @@ Khanon.js website: [https://www.khanonjs.com](https://www.khanonjs.com)
 ## 01 Blank project
 Start a project from scratch with the minimum codebase.
 
-Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project)
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
-## 02 App workflow
-This tutorial covers how to drive the workflow of an application. From the entry point, to start the first scene, switch of scenes and states, and how to show a screen on a critical error.
+## 02 Starting a scene
+Start the first *scene* and switch to different *scene states*.
 
-Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow)
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow).

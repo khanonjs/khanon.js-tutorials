@@ -1,7 +1,7 @@
 # Overview
 In this tutorial we will see how to drive the workflow of an application simulating how a video game workflow would be. From the entry point, to show loading screens,  load and start scenes, switch of states, and using GUIs.
 
-Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow)
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-app-workflow).
 
 # Workflow diagram
 
