@@ -244,4 +244,4 @@ export class StateTwo extends SceneStateInterface {
 
 As you can see, the state's [onStart](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#onStart) displays the GUI calling [showGUI](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#showGUI), and state's [onEnd](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#onEnd) hides the GUI calling [hideGUI](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#hideGUI). We need to pass the *stateName* and *onSwitchState* properties to *showGUI* to let the GUI interact with the state. These properties will be available in the GUI [`setup`](https://khanonjs.com/api-docs/classes/decorators_gui.GUIInterface.html#setup) object.
 
-Check the browser console to see how the lifecycle runs on each iteration.
+Check the browser's console to see how the lifecycle runs in each iteration.
