@@ -20,7 +20,7 @@ export class MyApp extends AppInterface {
   }
 
   onStart() {
-    // Entrypoint of the app
+    // Entry point of the app
     Logger.info('App onStart')
 
     // Show loading screen

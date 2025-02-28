@@ -37,7 +37,7 @@ Switch to it from the app's *onStart* method:
 })
 export class MyApp extends AppInterface {
   onStart() {
-    // Entrypoint of your app
+    // Entry point of your app
     Logger.info('App onStart')
 
     // Goto AppStateEntry
@@ -75,7 +75,7 @@ Before advancing, let's see how to add a loading screen while the scene is loadi
 **src/app.ts**
 ```
 onStart() {
-  // Entrypoint of your app
+  // Entry point of your app
   Logger.info('App onStart')
 
   // Show loading screen

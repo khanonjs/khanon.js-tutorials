@@ -9,7 +9,7 @@ import {
 })
 export class MyApp extends AppInterface {
   onStart() {
-    // Entrypoint of your app
+    // Entry point of your app
 
     // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
     Logger.trace('Hello world!')
