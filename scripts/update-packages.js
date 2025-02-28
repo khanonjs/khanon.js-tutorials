@@ -12,12 +12,13 @@ const tutorials = [
   '08-creating-simple-3d-game',
 ]
 
-const babylonjs_version = '~7.47.2'
-const khanonjsjs_version = '0.0.126'
+const babylonjs_version = '~7.50.0'
+const khanonjsjs_version = '0.0.134'
 
 tutorials.forEach(tutorialName => {
    console.log(`Updating packages for tutorial '${tutorialName}'...`)
    const package = require(`../${tutorialName}/package.json`)
+   package.devDependencies['@babylonjs/inspector'] = babylonjs_version
    package.dependencies['@khanonjs/engine'] = khanonjsjs_version
    package.dependencies['@babylonjs/core'] = babylonjs_version
    package.dependencies['@babylonjs/gui'] = babylonjs_version

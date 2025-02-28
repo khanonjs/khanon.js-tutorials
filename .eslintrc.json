@@ -17,11 +17,26 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "curly": ["error", "all"],
-        "indent": ["warn", 2],
-        "semi": ["warn", "never"],
-        "quotes": ["warn", "single"],
-        "object-curly-spacing": ["warn", "always"],
+        "curly": [
+            "error",
+            "all"
+        ],
+        "indent": [
+            "warn",
+            2
+        ],
+        "semi": [
+            "warn",
+            "never"
+        ],
+        "quotes": [
+            "warn",
+            "single"
+        ],
+        "object-curly-spacing": [
+            "warn",
+            "always"
+        ],
         "no-trailing-spaces": "warn",
         "no-multi-spaces": "warn",
         "no-multiple-empty-lines": "warn",
@@ -45,10 +60,20 @@
         "n/handle-callback-err": "warn",
         "array-bracket-spacing": "warn",
         "space-in-parens": "warn",
-        "eol-last": ["warn", "always"],
+        "eol-last": [
+            "warn",
+            "always"
+        ],
         "dot-notation": "off",
         "lines-between-class-members": "warn",
-        "@typescript-eslint/no-unused-vars": ["warn", { "vars": "all", "args": "none", "ignoreRestSiblings": false }],
+        "@typescript-eslint/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "args": "none",
+                "ignoreRestSiblings": false
+            }
+        ],
         "@typescript-eslint/no-empty-function": "off",
         "@typescript-eslint/no-explicit-any": "off",
         "@typescript-eslint/no-empty-interface": "off",
