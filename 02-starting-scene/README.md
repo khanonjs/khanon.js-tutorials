@@ -11,7 +11,7 @@ To start an application you just need to create a new class, extend [AppInterfac
 
 Besides the [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback, we can declare [onClose](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onClose) in case we want to perform some action on application close, and [onError](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onError), which is called on a critical error that doesn't let the application continue working. You can use *onError* to show a *HTML* error screen over the canvas.
 
-The app decorator [props](https://khanonjs.com/api-docs/interfaces/decorators_app.AppProps.html) have a mandatory field [`name`](https://khanonjs.com/api-docs/interfaces/decorators_app.AppProps.html#name) and other fields that you can use to configure the Babylon.js engine and other general parameters.
+The app decorator [props](https://khanonjs.com/api-docs/interfaces/decorators_app.AppProps.html) have a mandatory field [`name`](https://khanonjs.com/api-docs/interfaces/decorators_app.AppProps.html#name) and other fields that you can use to configure the Babylon.js engine and other global parameters.
 
 **app.ts**
 ```
@@ -62,7 +62,7 @@ The scene background scene color has been set to gray:
 
 ## States definition
 
-Now we define two states using the [State](https://khanonjs.com/api-docs/modules/decorators_scene_scene_state.html) decorator.
+Now we define two states using the [State](https://khanonjs.com/api-docs/functions/decorators_scene_scene_state.SceneState.html) decorator.
 
 **state-one.ts**
 ```
