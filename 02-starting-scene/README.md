@@ -5,9 +5,9 @@ Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutori
 
 # Creating the app class
 
-As we saw in the preivous tutorial, [App](https://khanonjs.com/api-docs/modules/decorators_app.html) class is the main class of the application, where the action starts.
+As we saw in the preivous tutorial, [App](https://khanonjs.com/api-docs/modules/decorators_app.html) class is the main class of the application where the action begins.
 
-To start an application you just need to create a new class, extend [AppInterface](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html) and decorate it with [App](https://khanonjs.com/api-docs/functions/decorators_app.App.html) decorator.
+To start an application you just need to create a new class, extend [AppInterface](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html) and decorate it with [App decorator](https://khanonjs.com/api-docs/functions/decorators_app.App.html).
 
 Besides the [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback, we can declare [onClose](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onClose) in case we want to perform some action on application close, and [onError](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onError), which is called on a critical error that doesn't let the application continue working. You can use *onError* to show a *HTML* error screen over the canvas.
 
@@ -158,7 +158,7 @@ At this point we have created all the copmponents of our small application. It i
 
 ## Declaring the scene states
 
-Before loading the scene we need to declare the states within the scene. In that way Khanon.js knows what the scene will use, to know what it has to load. Use the [`states`](https://khanonjs.com/api-docs/interfaces/decorators_scene.SceneProps.html#states) decorator property to declare them:
+Before loading the scene we need to declare the states within the scene. In that way Khanon.js knows what the scene will use and what it has to load. Use the [`states`](https://khanonjs.com/api-docs/interfaces/decorators_scene.SceneProps.html#states) decorator property to declare them:
 
 **scene-test.ts**
 ```
@@ -244,4 +244,4 @@ export class StateTwo extends SceneStateInterface {
 
 As you can see, the state's [onStart](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#onStart) displays the GUI calling [showGUI](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#showGUI), and state's [onEnd](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#onEnd) hides the GUI calling [hideGUI](https://khanonjs.com/api-docs/classes/decorators_scene_scene_state.SceneStateInterface.html#hideGUI). We need to pass the *stateName* and *onSwitchState* properties to *showGUI* to let the GUI interact with the state. These properties will be available in the GUI [`setup`](https://khanonjs.com/api-docs/classes/decorators_gui.GUIInterface.html#setup) object.
 
-Check the browser's console to see how the lifecycle runs in each iteration.
+Check the browser's console to see how the lifecycle runs for each iteration.

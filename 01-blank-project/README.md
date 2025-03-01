@@ -5,7 +5,7 @@ Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutori
 
 # Project structure
 
-A Khanon.js project typically contains the `root` files, `src` folder, and `public` folder.
+A Khanon.js project typically consists of the `root` files, `src` folder, and `public` folder.
 
 ## `root` files
 
@@ -17,11 +17,11 @@ It contains the [package.json](https://docs.npmjs.com/cli/v11/configuring-npm/pa
 
 Source files are placed in this folder.
 
-`app.ts` is usually placed in the root of *src*. This is the place where the application starts.
+`app.ts` is usually in the root of *src*. This is the place where the application begins.
 
-To start a Khanon.js application, you need to create a class, extend [AppInterface](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html) and decorate it with the [App decorator](https://khanonjs.com/api-docs/functions/decorators_app.App.html).
+To start a Khanon.js application you need to create a new class, extend [AppInterface](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html), and decorate it with the [App decorator](https://khanonjs.com/api-docs/functions/decorators_app.App.html).
 
-The entry point of the application is the mandatory [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback. Khanon.js will call this method once everything is ready to start. Use [KJS](https://khanonjs.com/api-docs/modules/kjs.KJS.html) namespace or [switchState](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#switchState) method to start running states and scenes.
+The entry point of the application is the mandatory [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) callback. Khanon.js calls this method once everything is ready to start after creating the Babylon.js engine.
 
 **app.ts**
 ```
@@ -31,7 +31,6 @@ The entry point of the application is the mandatory [onStart](https://khanonjs.c
 export class MyApp extends AppInterface {
   onStart() {
     // Entry point of your app
-    // Start scenes or states here.
 
     // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
     Logger.trace('Hello world!')
@@ -49,7 +48,7 @@ export class MyApp extends AppInterface {
 
 ## `public` folder
 
-It contains `index.html`, `assets` folder, any any other files and dependencies of your application.
+It contains `index.html`, `assets` folder, and any other files and dependencies of your application.
 
 This is the folder that will be published to the server along with the compiled application files.
 
