@@ -7,7 +7,7 @@ Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutori
 
 Let's analyze the workflow our app will follow in this tutorial:
 
-![App worfflow](https://github.com/khanonjs/khanon.js-tutorials/blob/main/02-app-workflow/workflow-diagram.jpg?raw=true "App worfflow")
+![App worfflow](https://github.com/khanonjs/khanon.js-tutorials/blob/main/03-app-workflow/workflow-diagram.jpg?raw=true "App worfflow")
 
 # Starting the app
 

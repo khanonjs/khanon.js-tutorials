@@ -4,9 +4,9 @@ const path = require('path');
 const tutorials = [
   '01-blank-project',
   '02-starting-scene',
-  '03-loading-sprites',
-  '04-loading-meshes',
-  '05-app-workflow',
+  '03-app-workflow',
+  '04-loading-sprites',
+  '05-loading-meshes',
   '06-working-with-actors',
   '07-creating-simple-2d-game',
   '08-creating-simple-3d-game',
