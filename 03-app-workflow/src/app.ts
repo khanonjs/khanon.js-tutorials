@@ -21,7 +21,7 @@ export class MyApp extends AppInterface {
 
   onStart() {
     // Entry point of the app
-    Logger.info('App onStart')
+    Logger.info('App onStart - Entry point')
 
     // Show loading screen
     MyApp.showLoadingSceen()
