@@ -3,4 +3,4 @@
 *.json
 *.md
 *.yml
-/scripts
+update-packages.js

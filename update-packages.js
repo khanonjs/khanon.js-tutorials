@@ -17,7 +17,7 @@ const khanonjsjs_version = '0.0.134'
 
 tutorials.forEach(tutorialName => {
    console.log(`Updating packages for tutorial '${tutorialName}'...`)
-   const package = require(`../${tutorialName}/package.json`)
+   const package = require(`./${tutorialName}/package.json`)
    package.devDependencies['@babylonjs/inspector'] = babylonjs_version
    package.dependencies['@khanonjs/engine'] = khanonjsjs_version
    package.dependencies['@babylonjs/core'] = babylonjs_version

@@ -2,7 +2,7 @@
   "name": "khanon.js-tutorials",
   "version": "1.0.0",
   "scripts": {
-    "update:packages": "node ./scripts/update-packages.js"
+    "update:packages": "node ./update-packages.js"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.12.0",
