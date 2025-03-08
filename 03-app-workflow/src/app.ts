@@ -5,29 +5,22 @@ import {
   Logger
 } from '@khanonjs/engine'
 
-import { AppStateEntry } from './app-states/state-game-intro'
+import { AppStateGameIntro } from './app-states/app-state-game-intro'
+import { HTMLController } from './classes/html-controller'
 
 @App({
   name: '02-app-workflow'
 })
 export class MyApp extends AppInterface {
-  static showLoadingSceen() {
-    // window.document.getElementById('loading-screen').style.display = 'flex'  // 8a8f descomentar
-  }
-
-  static hideLoadingScreen() {
-    // window.document.getElementById('loading-screen').style.display = 'none'  // 8a8f descomentar
-  }
-
   onStart() {
-    // Entry point of the app
-    Logger.info('App onStart - Entry point')
+    // Initialize HTMLController and show loading screen
+    HTMLController.initialize()
+    HTMLController.showLoading('initial-loading')
 
-    // Show loading screen
-    MyApp.showLoadingSceen()
-
-    // Go to AppStateEntry
-    this.switchState(AppStateEntry, {})
+    // Start the first state
+    KJS.setTimeout(() => {
+      this.switchState(AppStateGameIntro, {})
+    }, 5000)
   }
 
   onClose() {

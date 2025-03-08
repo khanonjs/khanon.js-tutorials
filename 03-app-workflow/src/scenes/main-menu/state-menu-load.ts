@@ -6,26 +6,25 @@ import {
 
 import { HTMLController } from '../../classes/html-controller'
 import { GUIInfo } from '../common/gui-info'
-import { StateStagePlay } from './state-stage-play'
+import { StateMenuInterface } from './state-menu-interface'
 
 @SceneState()
-export class StateStageIntro extends SceneStateInterface<{ stage: number }> {
+export class StateMenuLoad extends SceneStateInterface {
   private timeout: KJS.Timeout
 
   onStart() {
-    HTMLController.showLoading('stage-intro')
+    HTMLController.showLoading('menu-load')
     this.showGUI(GUIInfo, {
-      context: `Stage ${this.setup.stage} is starting, simulate 5 seconds loading.`,
+      context: 'Main Menu is loading asynchronous data, simulate 5 seconds loading.',
       seconds: 5
     })
-
     this.timeout = KJS.setTimeout(() => {
-      HTMLController.hideLoading()
-      this.switchState(StateStagePlay, { stage: this.setup.stage })
+      this.switchState(StateMenuInterface, {})
     }, 5000)
   }
 
   onEnd() {
+    HTMLController.hideLoading()
     KJS.clearTimeout(this.timeout)
   }
 }

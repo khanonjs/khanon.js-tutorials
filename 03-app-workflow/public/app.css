@@ -11,53 +11,290 @@ body {
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-#loading-screen {
+#loading-background {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     position: absolute;
     width: 100%;
-    height: 100%;
-    background-color: #2f2f2f;
+    height: 5em;
+    top: 45%;
 }
 
-#loading-screen-text {
-    color: white;
-    margin-bottom: 5%;
+/* HTML: <div class="finish-intro"></div> */
+.finish-intro {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    background: linear-gradient(90deg, #000 50%, #0000 0) right/200% 100%;
+    animation: l21 2s infinite linear;
 }
 
-#loading-screen-spinner {
-    width: 20%;
-    height: 20%;
+.finish-intro::before {
+    content: "The game is over.";
+    color: #0000;
+    padding: 0 5px;
+    background: inherit;
+    background-image: linear-gradient(90deg, #fff 50%, #000 0);
+    -webkit-background-clip: text;
+    background-clip: text;
 }
 
-/* HTML: <div class="loader"></div> */
-.loader {
-    width: 80px;
-    height: 70px;
-    border: 5px solid #000;
-    padding: 0 8px;
-    box-sizing: border-box;
-    background:
-        linear-gradient(#fff 0 0) 0 0/8px 20px,
-        linear-gradient(#fff 0 0) 100% 0/8px 20px,
-        radial-gradient(farthest-side, #fff 90%, #0000) 0 5px/8px 8px content-box,
-        #000;
-    background-repeat: no-repeat;
-    animation: l3 2s infinite linear;
+@keyframes l21 {
+    100% {
+        background-position: left
+    }
 }
 
-@keyframes l3 {
-    25% {
-        background-position: 0 0, 100% 100%, 100% calc(100% - 5px)
+/* HTML: <div class="stage-intro"></div> */
+.stage-intro {
+    width: 50px;
+    aspect-ratio: 1.154;
+    position: relative;
+    background: conic-gradient(from 120deg at 50% 64%, #0000, #25b09b 1deg 120deg, #0000 121deg);
+    animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+
+.stage-intro:before,
+.stage-intro:after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: inherit;
+    transform-origin: 50% 66%;
+    animation: l27-1 1.5s infinite;
+}
+
+.stage-intro:after {
+    --s: -1;
+}
+
+@keyframes l27-0 {
+
+    0%,
+    30% {
+        transform: rotate(0)
     }
 
-    50% {
-        background-position: 0 100%, 100% 100%, 0 calc(100% - 5px)
+    70% {
+        transform: rotate(120deg)
     }
 
-    75% {
-        background-position: 0 100%, 100% 0, 100% 5px
+    70.01%,
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@keyframes l27-1 {
+    0% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(0)
+    }
+
+    30%,
+    70% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(calc(var(--s, 1)*-5px), 10px)
+    }
+
+    100% {
+        transform: rotate(calc(var(--s, 1)*120deg)) translate(0)
+    }
+}
+
+/* HTML: <div class="menu-load"></div> */
+.menu-load {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: l1 1s infinite;
+}
+
+@keyframes l1 {
+    to {
+        transform: rotate(.5turn)
+    }
+}
+
+@keyframes l14 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+/* HTML: <div class="game-intro"></div> */
+.game-intro {
+    width: fit-content;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    background: linear-gradient(135deg, #0000 calc(50% - 0.5em), #000 0 calc(50% + 0.5em), #0000 0) right/300% 100%;
+    animation: l22 2s infinite;
+}
+
+.game-intro::before {
+    content: "Game Intro is being reproduced";
+    color: #0000;
+    padding: 0 5px;
+    background: inherit;
+    background-image: linear-gradient(135deg, #000 calc(50% - 0.5em), #fff 0 calc(50% + 0.5em), #000 0);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes l22 {
+    100% {
+        background-position: left
+    }
+}
+
+/* Initial loading animation */
+.initial-loading {
+    --w: 10ch;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 30px;
+    line-height: 1.2em;
+    letter-spacing: var(--w);
+    width: var(--w);
+    overflow: hidden;
+    white-space: nowrap;
+    color: #0000;
+    animation: l17 2s infinite;
+}
+
+.initial-loading:before {
+    content: "Loading...";
+}
+
+@keyframes l17 {
+    0% {
+        text-shadow:
+            calc(0*var(--w)) -1.2em #000, calc(-1*var(--w)) -1.2em #000, calc(-2*var(--w)) -1.2em #000, calc(-3*var(--w)) -1.2em #000, calc(-4*var(--w)) -1.2em #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    4% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) -1.2em #000, calc(-2*var(--w)) -1.2em #000, calc(-3*var(--w)) -1.2em #000, calc(-4*var(--w)) -1.2em #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    8% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) -1.2em #000, calc(-3*var(--w)) -1.2em #000, calc(-4*var(--w)) -1.2em #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    12% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) -1.2em #000, calc(-4*var(--w)) -1.2em #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    16% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) -1.2em #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    20% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) -1.2em #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    24% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) -1.2em #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    28% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) -1.2em #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    32% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) -1.2em #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    36% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) -1.2em #000
+    }
+
+    40%,
+    60% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 0 #000
+    }
+
+    64% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 0 #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    68% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 0 #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    72% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 0 #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    76% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 0 #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    80% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 0 #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    84% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 0 #000, calc(-4*var(--w)) 1.2em #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    88% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 0 #000, calc(-3*var(--w)) 1.2em #000, calc(-4*var(--w)) 1.2em #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    92% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 0 #000, calc(-2*var(--w)) 1.2em #000, calc(-3*var(--w)) 1.2em #000, calc(-4*var(--w)) 1.2em #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    96% {
+        text-shadow:
+            calc(0*var(--w)) 0 #000, calc(-1*var(--w)) 1.2em #000, calc(-2*var(--w)) 1.2em #000, calc(-3*var(--w)) 1.2em #000, calc(-4*var(--w)) 1.2em #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
+    }
+
+    100% {
+        text-shadow:
+            calc(0*var(--w)) 1.2em #000, calc(-1*var(--w)) 1.2em #000, calc(-2*var(--w)) 1.2em #000, calc(-3*var(--w)) 1.2em #000, calc(-4*var(--w)) 1.2em #000,
+            calc(-5*var(--w)) 1.2em #000, calc(-6*var(--w)) 1.2em #000, calc(-7*var(--w)) 1.2em #000, calc(-8*var(--w)) 1.2em #000, calc(-9*var(--w)) 1.2em #000
     }
 }
