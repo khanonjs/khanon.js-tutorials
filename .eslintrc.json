@@ -57,7 +57,7 @@
         "no-useless-constructor": "off",
         "func-call-spacing": "off",
         "keyword-spacing": "warn",
-        "n/handle-callback-err": "warn",
+        "n/handle-callback-err": "off",
         "array-bracket-spacing": "warn",
         "space-in-parens": "warn",
         "eol-last": [

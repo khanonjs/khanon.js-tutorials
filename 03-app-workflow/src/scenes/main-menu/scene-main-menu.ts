@@ -7,6 +7,9 @@ import {
 import { StateMenuInterface } from './state-menu-interface'
 import { StateMenuLoad } from './state-menu-load'
 
+/**
+ * Scene to show the main menu.
+ */
 @Scene({
   configuration: {
     clearColor: new BABYLON.Color4(0.2, 0.2, 0.2)

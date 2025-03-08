@@ -9,7 +9,11 @@ import {
 export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }> {
   private input: BABYLON_GUI.TextBlock
 
+  /**
+   * Initialize the GUI using container as the parent of all elements
+   */
   onInitialize(container: BABYLON_GUI.AdvancedDynamicTexture) {
+    // Background
     const background = new BABYLON_GUI.Rectangle()
     background.top = '0px'
     background.left = '0px'
@@ -20,6 +24,7 @@ export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }>
     background.background = 'rgba(0, 0, 0, 0)'
     container.addControl(background)
 
+    // Input text block with app context information
     this.input = new BABYLON_GUI.TextBlock('text-info')
     this.input.left = '40em'
     this.input.top = '10em'
@@ -37,6 +42,9 @@ export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }>
     this.startTimer()
   }
 
+  /**
+   * Start countdown timer
+   */
   startTimer() {
     if (this.setup.seconds) {
       let seconds = this.setup.seconds
@@ -49,6 +57,10 @@ export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }>
     }
   }
 
+  /**
+   * Update the text adding the countdown seconds in case it is running.
+   * Update the app state name, scene name, scene state name, context text, and countodwn.
+   */
   updateText(seconds?: number) {
     this.input.text = `
       App state:       ${KJS.getApp().state?.getClassName()}

@@ -8,23 +8,34 @@ import { HTMLController } from '../../classes/html-controller'
 import { GUIInfo } from '../common/gui-info'
 import { StateMenuInterface } from './state-menu-interface'
 
+/**
+ * State to show the main menu loading screen.
+ */
 @SceneState()
 export class StateMenuLoad extends SceneStateInterface {
   private timeout: KJS.Timeout
 
   onStart() {
+    // Show loading spinner
     HTMLController.showLoading('menu-load')
+
+    // Show GUIInfo
     this.showGUI(GUIInfo, {
-      context: 'Main Menu is loading asynchronous data, simulate 5 seconds loading.',
+      context: 'The main menu is loading asynchronous data, 5 seconds fake loading.',
       seconds: 5
     })
+
+    // 5 seconds fake loading
     this.timeout = KJS.setTimeout(() => {
       this.switchState(StateMenuInterface, {})
     }, 5000)
   }
 
   onEnd() {
+    // Hide loading spinner on state end.
     HTMLController.hideLoading()
+
+    // Clear timeout
     KJS.clearTimeout(this.timeout)
   }
 }

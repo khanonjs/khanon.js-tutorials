@@ -1,8 +1,7 @@
 import {
   App,
   AppInterface,
-  KJS,
-  Logger
+  KJS
 } from '@khanonjs/engine'
 
 import { AppStateGameIntro } from './app-states/app-state-game-intro'
@@ -17,17 +16,17 @@ export class MyApp extends AppInterface {
     HTMLController.initialize()
     HTMLController.showLoading('initial-loading')
 
-    // Start the first state
+    // Start the first state, 5 seconds fake loading.
     KJS.setTimeout(() => {
       this.switchState(AppStateGameIntro, {})
     }, 5000)
   }
 
   onClose() {
-    Logger.info('App onClose')
+    // Use this method in case you want to do something before the app is closed.
   }
 
   onError(error?: string) {
-    Logger.error('App onError:', error)
+    // Use this method to display an error screen.
   }
 }

@@ -33,7 +33,7 @@ body {
 }
 
 .finish-intro::before {
-    content: "The game is over.";
+    content: "The game is over";
     color: #0000;
     padding: 0 5px;
     background: inherit;
@@ -136,7 +136,7 @@ body {
 }
 
 .game-intro::before {
-    content: "Game Intro is being reproduced";
+    content: "Game intro is being reproduced";
     color: #0000;
     padding: 0 5px;
     background: inherit;

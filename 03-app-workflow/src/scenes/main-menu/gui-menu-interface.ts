@@ -4,8 +4,15 @@ import {
   GUIInterface
 } from '@khanonjs/engine'
 
+/**
+ * GUI for the menu interface.
+ * @requires onPlayGame callback to bind the play game button.
+ */
 @GUI()
 export class GUIMenuInterface extends GUIInterface<{ onPlayGame: () => void }> {
+  /**
+   * Initialize the GUI using container as the parent of all elements
+   */
   onInitialize(container: BABYLON_GUI.AdvancedDynamicTexture) {
     const background = new BABYLON_GUI.Rectangle()
     background.color = 'rgba(0, 0, 0, 0)'
