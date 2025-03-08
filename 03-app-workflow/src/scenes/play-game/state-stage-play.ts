@@ -21,7 +21,7 @@ export class StateStagePlay extends SceneStateInterface<{ stage: number }> {
       context: `Playing stage ${this.setup.stage}.`
     })
 
-    // Show GUIStagePlay
+    // Show GUIStagePlay and add all binded methods.
     this.showGUI(GUIStagePlay, {
       onRestart: this.restartStage.bind(this),
       onNext: this.nextStage.bind(this),
@@ -35,23 +35,31 @@ export class StateStagePlay extends SceneStateInterface<{ stage: number }> {
     this.hideGUI(GUIStagePlay)
   }
 
+  /**
+   * Restart same stage. Binded to the GUIStagePlay restart game button.
+   */
   restartStage() {
-    // Restart same stage. Binded to the GUIStagePlay restart game button.
     this.switchState(StateStageIntro, { stage: this.setup.stage })
   }
 
+  /**
+   * Go to next stage. Binded to the GUIStagePlay next game button.
+   */
   nextStage() {
-    // Go to next stage. Binded to the GUIStagePlay next game button.
     this.switchState(StateStageIntro, { stage: this.setup.stage + 1 })
   }
 
+  /**
+   * Quit the game and go back to main menu. Binded to the GUIStagePlay quit game button.
+   */
   quitGame() {
-    // Quit the game and go back to main menu. Binded to the GUIStagePlay quit game button.
     KJS.switchAppState(AppStateMainMenu, {})
   }
 
+  /**
+   * Finish the game, watch the final intro. Binded to the GUIStagePlay finish game button.
+   */
   finishGame() {
-    // Finish the game, watch the final intro. Binded to the GUIStagePlay finish game button.
     KJS.switchAppState(AppStateGameOver, {})
   }
 }

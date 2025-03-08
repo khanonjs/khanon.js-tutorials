@@ -5,6 +5,9 @@ import {
   KJS
 } from '@khanonjs/engine'
 
+/**
+ * This GUI shows the app context: app state name, scene name, scene state name, and a countdown timer.
+ */
 @GUI()
 export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }> {
   private input: BABYLON_GUI.TextBlock

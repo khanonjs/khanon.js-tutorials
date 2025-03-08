@@ -19,7 +19,7 @@ export class StateMenuInterface extends SceneStateInterface {
       context: 'This is the main menu interface, the user can choose what to do now.'
     })
 
-    // Show GUIMenuInterface
+    // Show GUIMenuInterface and bind playGame method to the play game button.
     this.showGUI(GUIMenuInterface, { onPlayGame: () => this.playGame() })
   }
 

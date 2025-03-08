@@ -26,10 +26,10 @@ export class StateIntro extends SceneStateInterface<{ loadingClass: string, cont
       seconds: 10
     })
 
-    // Show GUIIntro
+    // Show GUIIntro and bind end intro method to skip button.
     this.showGUI(GUIIntro, { onSkip: () => this.endIntro() })
 
-    // Wait 10 seconds before going to the next state
+    // Wait 10 seconds before going to the next state.
     this.timeout = KJS.setTimeout(() => {
       this.endIntro()
     }, 10000)
