@@ -47,7 +47,6 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
    * End intro. It is called from GUIIntro onSkip or after 10 seconds waiting.
    */
   end() {
-    console.log('aki GO END!!!')
     KJS.switchAppState(this.setup.nextAppState, {})
   }
 }

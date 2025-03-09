@@ -16,7 +16,7 @@ Let's analyze the workflow our app will follow in this tutorial:
 - The *play game scene* firstly shows the *stage intro state*, after which the action starts in the *stage play state*.
 - In the *stage play state* the user can restart the stage, go to the next stage, quit the game, or finish the game. Restart and go to the Next stage restarts the `app state play game` at the same or next stage; Quit the game drives the user back to the `app state main menu`, and Finishing the game goes to the last `app state game over`.
 
-# Starting the app
+# Starting the game
 
 By default, *index.html* displays a loading screen. This is what the user sees before the app is launched.
 
@@ -163,7 +163,7 @@ export class GUIIntro extends GUIInterface<{ onSkip: () => void }> {
 
 # Main menu
 
-The main menu scene is started from `AppStateMainMenu`, launching `StateMenuLoad`. This state doesn't have any setup object, so we can omit it.
+`SceneMainMenu` scene is started from `AppStateMainMenu`, launching `StateMenuLoad`. This state doesn't have any setup object, so we can omit it.
 
 **src/app-states/app-state-main-menu.ts**
 ```
@@ -275,5 +275,194 @@ export class GUIMenuInterface extends GUIInterface<{ onPlayGame: () => void }> {
 
 # Play game
 
-When the user clicks on play game button in the main menu, the app switch to `AppStatePlayGame`.
+When the user clicks on play game button the app switch to `AppStatePlayGame`, from where we start `ScenePlayGame` and launch `StateStageIntro` with the *stage* setup property as the first stage 0.
 
+**src/app-states/app-state-play-game.ts**
+```
+@AppState({
+  scenes: [ScenePlayGame]
+})
+export class AppStatePlayGame extends AppStateInterface {
+  onStart() {
+    KJS.Scene.start(ScenePlayGame, StateStageIntro, { stage: 0 })
+  }
+}
+```
+
+*StateStageIntro* takes 5 seconds to show the stage intro and then goes to the next state `StateStagePlay`.
+
+From here we already know which stage the user is going to play thanks to the stage setup property: `<{ stage: number }>`
+
+**src/scenes/play-game/state-stage-intro.ts**
+```
+@SceneState()
+export class StateStageIntro extends SceneStateInterface<{ stage: number }> {
+  private timeout: KJS.Timeout
+
+  onStart() {
+    HTMLController.showLoading('stage-intro')
+
+    this.showGUI(GUIInfo, {
+      context: `Stage ${this.setup.stage} is starting, 5 seconds fake loading.`,
+      seconds: 5
+    })
+
+    this.timeout = KJS.setTimeout(() => {
+      HTMLController.hideLoading()
+      this.switchState(StateStagePlay, { stage: this.setup.stage })
+    }, 5000)
+  }
+
+  onEnd() {
+    KJS.clearTimeout(this.timeout)
+  }
+}
+```
+
+At this point the game action starts. The play game scene would be rendering wonderful landscapes, characters, particles and everything that makes all video games beautiful; but we need to continue our journey to implement more logic to our game.
+
+Within `StateStagePlay` four things can happen: the user can lose, driving the app to restart the stage; the user can win, driving the app to start the next stage; the user can quit the stage; or the game can end.
+
+Those four actions are implemented in four methods, and binded to *GUIStagePlay* buttons. In the real life, different stage events would call those methods.
+
+For restarting and going to the next stage we only need to recall the `StateStageIntro` with the desired stage number.
+
+To go back to the main menu we need to switch app state to `AppStateMainMenu`.
+
+And finally to go to the game over we switch to `AppStateGameOver`, from where we will repeat previous steps to show the last intro.
+
+**src/scenes/play-game/state-stage-play.ts**
+```
+@SceneState()
+export class StateStagePlay extends SceneStateInterface<{ stage: number }> {
+  onStart() {
+    this.showGUI(GUIInfo, {
+      context: `Playing stage ${this.setup.stage}.`
+    })
+
+    this.showGUI(GUIStagePlay, {
+      onRestart: this.restartStage.bind(this),
+      onNext: this.nextStage.bind(this),
+      onQuit: this.quitGame.bind(this),
+      onFinish: this.finishGame.bind(this)
+    })
+  }
+
+  onEnd() {
+    this.hideGUI(GUIStagePlay)
+  }
+
+  restartStage() {
+    this.switchState(StateStageIntro, { stage: this.setup.stage })
+  }
+
+  nextStage() {
+    this.switchState(StateStageIntro, { stage: this.setup.stage + 1 })
+  }
+
+  quitGame() {
+    KJS.switchAppState(AppStateMainMenu, {})
+  }
+
+  finishGame() {
+    KJS.switchAppState(AppStateGameOver, {})
+  }
+}
+```
+
+**src/scenes/play-game/gui-stage-play.ts**
+```
+@GUI()
+export class GUIStagePlay extends GUIInterface<{ onRestart: () => void, onNext: () => void, onQuit: () => void, onFinish: () => void }> {
+  onInitialize(container: BABYLON_GUI.AdvancedDynamicTexture) {
+    const background = new BABYLON_GUI.Rectangle()
+    container.addControl(background)
+
+    const createButton = (text: string, index: number, callback: () => void) => {
+      button.onPointerUpObservable.add(() => {
+        callback()
+      })
+      background.addControl(button)
+    }
+
+    createButton('Restart Stage', 0, this.setup.onRestart)
+    createButton('Next Stage', 1, this.setup.onNext)
+    createButton('Quit Game', 2, this.setup.onQuit)
+    createButton('Finish Game', 3, this.setup.onFinish)
+  }
+}
+```
+
+# Game over
+
+`AppStateGameOver` is quite similar to `AppStateGameIntro`. We could merge both states and do a single class configured with the setup generic interface, but in this tutorial we keep them in two different classes.
+
+**src/app-states/app-state-game-over.ts**
+```
+@AppState({
+  scenes: [SceneGameOver]
+})
+export class AppStateGameOver extends AppStateInterface {
+  onStart() {
+    KJS.Scene.start(SceneGameOver, StateIntro, {
+      introClass: 'finish-intro',
+      context: 'The game is displaying the last intro before going back to the main menu. Wait 10 seconds or skip the intro.',
+      nextAppState: AppStateMainMenu
+    })
+  }
+}
+```
+
+We reuse here `StateIntro` and show a different intro, with same state logic and the *GUIIntro* interface that will show the skip button.
+
+**src/scenes/game-over/scene-game-over.ts**
+```
+@Scene({
+  configuration: {
+    clearColor: new BABYLON.Color4(0.2, 0.2, 0.2)
+  },
+  states: [StateIntro]
+})
+export class SceneGameOver extends SceneInterface {}
+```
+
+After the game over intro has ended, the game goes back to the main menu: `nextAppState: AppStateMainMenu`.
+
+**src/scenes/common/state-intro.ts**
+```
+@SceneState()
+export class StateIntro extends SceneStateInterface<{ introClass: string, context: string, nextAppState: AppStateConstructor }> {
+  private timeout: KJS.Timeout
+
+  onStart() {
+    HTMLController.showLoading(this.setup.introClass)
+
+    this.showGUI(GUIInfo, {
+      context: this.setup.context,
+      seconds: 10
+    })
+
+    this.showGUI(GUIIntro, { onSkip: () => this.end() })
+
+    this.timeout = KJS.setTimeout(() => {
+      this.end()
+    }, 10000)
+  }
+
+  onEnd() {
+    HTMLController.hideLoading()
+
+    KJS.clearTimeout(this.timeout)
+  }
+
+  end() {
+    KJS.switchAppState(this.setup.nextAppState, {})
+  }
+}
+```
+
+# Conclusion
+
+In general terms, this is how a Khanon.js application drives the workflow. In next tutorials we will see how to render graphics, generate events, and send notifications between the different app components, but that extra complexity doesn't change that the workflow will be normally driven in a similar way than we saw in this tutorial.
+
+Before starting a project it is important to do a proper design knowing where we can reuse classes to fasten up the development creating a modular and scalable architecture.
