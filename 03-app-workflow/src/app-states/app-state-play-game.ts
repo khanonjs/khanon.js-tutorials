@@ -15,7 +15,7 @@ import { StateStageIntro } from '../scenes/play-game/state-stage-intro'
 })
 export class AppStatePlayGame extends AppStateInterface {
   onStart() {
-    // Start ScenePlayGame and launch StateStageIntro
+    // Start ScenePlayGame and launch StateStageIntro.
     KJS.Scene.start(ScenePlayGame, StateStageIntro, { stage: 0 })
   }
 }

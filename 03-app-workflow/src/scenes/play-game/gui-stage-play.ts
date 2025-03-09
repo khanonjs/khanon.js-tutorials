@@ -17,13 +17,14 @@ export class GUIStagePlay extends GUIInterface<{ onRestart: () => void, onNext: 
    * Initialize the GUI using container as the parent of all elements
    */
   onInitialize(container: BABYLON_GUI.AdvancedDynamicTexture) {
+    // Background
     const background = new BABYLON_GUI.Rectangle()
     background.color = 'rgba(0, 0, 0, 0)'
     background.background = 'rgba(0, 0, 0, 0)'
     background.top = '0px'
     background.left = '0px'
     background.width = '100%'
-    background.height = '240px'
+    background.height = '100%'
     background.verticalAlignment = BABYLON_GUI.Control.VERTICAL_ALIGNMENT_TOP
     container.addControl(background)
 
@@ -37,9 +38,10 @@ export class GUIStagePlay extends GUIInterface<{ onRestart: () => void, onNext: 
       button.onPointerUpObservable.add(() => {
         callback()
       })
-      container.addControl(button)
+      background.addControl(button)
     }
 
+    // Create stage buttons
     createButton('Restart Stage', 0, this.setup.onRestart)
     createButton('Next Stage', 1, this.setup.onNext)
     createButton('Quit Game', 2, this.setup.onQuit)

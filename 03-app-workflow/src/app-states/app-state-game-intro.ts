@@ -16,9 +16,9 @@ import { AppStateMainMenu } from './app-state-main-menu'
 })
 export class AppStateGameIntro extends AppStateInterface {
   onStart() {
-    // Start SceneGameIntro and launch StateIntro
+    // Start SceneGameIntro and launch StateIntro.
     KJS.Scene.start(SceneGameIntro, StateIntro, {
-      loadingClass: 'game-intro',
+      introClass: 'game-intro',
       context: 'The game is displaying the first intro before going to the main menu. Wait 10 seconds or skip the intro.',
       nextAppState: AppStateMainMenu
     })

@@ -13,12 +13,12 @@ import { GUIIntro } from './gui-intro'
  * SceneState to show any intro screen and skip button GUI.
  */
 @SceneState()
-export class StateIntro extends SceneStateInterface<{ loadingClass: string, context: string, nextAppState: AppStateConstructor }> {
+export class StateIntro extends SceneStateInterface<{ introClass: string, context: string, nextAppState: AppStateConstructor }> {
   private timeout: KJS.Timeout
 
   onStart() {
     // Show loading spinner
-    HTMLController.showLoading(this.setup.loadingClass)
+    HTMLController.showLoading(this.setup.introClass)
 
     // Show GUIInfo
     this.showGUI(GUIInfo, {
@@ -27,11 +27,11 @@ export class StateIntro extends SceneStateInterface<{ loadingClass: string, cont
     })
 
     // Show GUIIntro and bind end intro method to skip button.
-    this.showGUI(GUIIntro, { onSkip: () => this.endIntro() })
+    this.showGUI(GUIIntro, { onSkip: () => this.end() })
 
     // Wait 10 seconds before going to the next state.
     this.timeout = KJS.setTimeout(() => {
-      this.endIntro()
+      this.end()
     }, 10000)
   }
 
@@ -44,9 +44,10 @@ export class StateIntro extends SceneStateInterface<{ loadingClass: string, cont
   }
 
   /**
-   * End intro. It is called from GUIIntro or after 10 seconds waiting.
+   * End intro. It is called from GUIIntro onSkip or after 10 seconds waiting.
    */
-  endIntro() {
+  end() {
+    console.log('aki GO END!!!')
     KJS.switchAppState(this.setup.nextAppState, {})
   }
 }

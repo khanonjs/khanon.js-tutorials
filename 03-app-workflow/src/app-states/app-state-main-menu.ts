@@ -19,7 +19,7 @@ export class AppStateMainMenu extends AppStateInterface {
     // Show loading spinner
     HTMLController.showLoading('game-intro')
 
-    // Start SceneMainMenu and launch StateMenuLoad
+    // Start SceneMainMenu and launch StateMenuLoad.
     KJS.Scene.start(SceneMainMenu, StateMenuLoad)
   }
 }
