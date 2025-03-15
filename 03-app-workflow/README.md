@@ -18,7 +18,7 @@ Let's analyze the workflow our app will follow in this tutorial:
 
 # Starting the game
 
-By default, *index.html* displays a loading screen. This is what the user sees before the app is launched.
+By default, *index.html* displays a loading screen. This is what the user sees before the app is ready to start.
 
 **public/index.html**
 ```
@@ -32,7 +32,7 @@ By default, *index.html* displays a loading screen. This is what the user sees b
 
 As we saw in the previous tutorial, to create the app just decorate your app class with the [App decorator](https://khanonjs.com/api-docs/functions/decorators_app.App.html).
 
-Once the app started, the app's [`onStart`](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) is the entry point of the application, so here we can start doing things.
+When the app starts, the [onStart](https://khanonjs.com/api-docs/classes/decorators_app.AppInterface.html#onStart) method is the entry point of the application, so here we can start doing things.
 
 We could load a scene directly from this method, but it is a good practice working with states from the beggining, that will help to modulate and scalate the application in a proper way.
 
@@ -463,6 +463,6 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
 
 # Conclusion
 
-In general terms, this is how a Khanon.js application drives the workflow. In next tutorials we will see how to render graphics, generate events, and send notifications between the different app components, but that extra complexity doesn't change that the workflow will be normally driven in a similar way than we saw in this tutorial.
+In general terms, this is how a Khanon.js application manages the workflow. In next tutorials we will see how to render graphics, generate events, send notifications between instances, and more. That extra complexity doesn't change the fact that the workflow will typically be managed in a similar way than we saw in this tutorial.
 
-Before starting a project it is important to do a proper design knowing where we can reuse classes to fasten up the development creating a modular and scalable architecture.
+After designing our project, it is important to do retrospective to determine the classes we are going to reuse, creating a modular and scalable architecture.
