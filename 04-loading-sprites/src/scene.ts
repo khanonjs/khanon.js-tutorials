@@ -105,7 +105,7 @@ export class SceneBusStop extends SceneInterface {
     // Lamp particles, reuse ParticleSnowLamp and apply a different setup depending if it is white or red lamp
     const whiteSetup = {
       boundingInfo: this.boundingInfo,
-      width: 5,
+      width: 9,
       power: 8,
       color: new BABYLON.Color3(1, 1, 1)
     }
