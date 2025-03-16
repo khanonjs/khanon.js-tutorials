@@ -57,7 +57,7 @@ export class SceneBusStop extends SceneInterface {
 }
 ```
 
-# Loading sprites into the scene
+# Loading sprites
 
 There are two ways of loading sprites: using decorated *properties*, and using decorated *classes*. The difference between them is that property decorators are created within the class that is going to use them, restricting their use to that context. They lack of lifecycle callbacks, but are faster to implement. Decorated classes can be reused between different components (scenes, states and actors) and you can implement their lifecycle.
 
@@ -149,7 +149,7 @@ export class SceneBusStop extends SceneInterface {
 
 At this point the scene is rendering already the background and the animated girl.
 
-# Loading particles
+# Creating particles
 
 Similar to sprites, there are two ways to implement particles: in decorated methods, and decorated classes. To create particles we need to initialize the particle system, so we are required to implement their initialization in a method, that's why we need a method to define them within a class. The other option is to create their own class.
 
