@@ -50,7 +50,7 @@ export class MyApp extends AppInterface {
     HTMLController.initialize()
     HTMLController.showLoading('initial-loading')
 
-    KJS.setTimeout(() => {
+    setTimeout(() => {
       this.switchState(AppStateGameIntro, {})
     }, 5000)
   }
@@ -104,14 +104,12 @@ In this case, we are requiring the HTML intro class that will be displayed, a co
 
 In the onStart method we display the intro HTML, the `GUIInfo` interface to which we send the context text, the `GUIIntro` that displays a button to skip the intro, and start a fake 10 seconds intro duration.
 
-Remember hide and clear things you don't need anymore after the state ends in the onEnd method.
+Remember releasing and stop elements in the *onEnd* method. If you use interface timers (`this.setTimeout`) they will be automatically removed on state release. That applies to all interfaces supporting *setTimeout* or *setInterval* methods.
 
 **src/scenes/common/state-intro.ts**
 ```
 @SceneState()
 export class StateIntro extends SceneStateInterface<{ introClass: string, context: string, nextAppState: AppStateConstructor }> {
-  private timeout: KJS.Timeout
-
   onStart() {
     HTMLController.showLoading(this.setup.introClass)
 
@@ -122,15 +120,13 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
 
     this.showGUI(GUIIntro, { onSkip: () => this.end() })
 
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       this.end()
     }, 10000)
   }
 
   onEnd() {
     HTMLController.hideLoading()
-
-    KJS.clearTimeout(this.timeout)
   }
 
   end() {
@@ -205,8 +201,6 @@ After the fake data has been loaded we switch to the `StateMenuInterface`.
 ```
 @SceneState()
 export class StateMenuLoad extends SceneStateInterface {
-  private timeout: KJS.Timeout
-
   onStart() {
     HTMLController.showLoading('menu-load')
 
@@ -215,15 +209,13 @@ export class StateMenuLoad extends SceneStateInterface {
       seconds: 5
     })
 
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       this.switchState(StateMenuInterface, {})
     }, 5000)
   }
 
   onEnd() {
     HTMLController.hideLoading()
-
-    KJS.clearTimeout(this.timeout)
   }
 }
 ```
@@ -297,8 +289,6 @@ From here we already know which stage the user is going to play thanks to the st
 ```
 @SceneState()
 export class StateStageIntro extends SceneStateInterface<{ stage: number }> {
-  private timeout: KJS.Timeout
-
   onStart() {
     HTMLController.showLoading('stage-intro')
 
@@ -307,14 +297,10 @@ export class StateStageIntro extends SceneStateInterface<{ stage: number }> {
       seconds: 5
     })
 
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       HTMLController.hideLoading()
       this.switchState(StateStagePlay, { stage: this.setup.stage })
     }, 5000)
-  }
-
-  onEnd() {
-    KJS.clearTimeout(this.timeout)
   }
 }
 ```
@@ -432,8 +418,6 @@ After the game over intro has ended, the game goes back to the main menu: `nextA
 ```
 @SceneState()
 export class StateIntro extends SceneStateInterface<{ introClass: string, context: string, nextAppState: AppStateConstructor }> {
-  private timeout: KJS.Timeout
-
   onStart() {
     HTMLController.showLoading(this.setup.introClass)
 
@@ -444,15 +428,13 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
 
     this.showGUI(GUIIntro, { onSkip: () => this.end() })
 
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       this.end()
     }, 10000)
   }
 
   onEnd() {
     HTMLController.hideLoading()
-
-    KJS.clearTimeout(this.timeout)
   }
 
   end() {

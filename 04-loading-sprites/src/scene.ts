@@ -27,21 +27,17 @@ import { SpriteGirl } from './sprite-girl'
 export class SceneBusStop extends SceneInterface {
   private background: SpriteInterface
   private boundingInfo: BABYLON.BoundingInfo
-  private direction1 = new BABYLON.Vector3(0.8, -0.8, 0)
-  private direction2 = new BABYLON.Vector3(1.5, -1.5, 0)
 
   @Sprite({ url: './assets/background.png' }) Background: SpriteConstructor
-  @Sprite({ url: './assets/snow.png' }) SnowWhite: SpriteConstructor
+  @Sprite({ url: './assets/snow.png' }) Snow: SpriteConstructor
 
-  @Particle({
-    renderOverTheScene: true
-  })
+  @Particle({ renderOverScene: true })
   snowBack(particle: ParticleInterface) {
     const ps = particle.babylon.particleSystem
-    particle.setSprite(this.SnowWhite)
+    particle.setSprite(this.Snow)
     ps.createBoxEmitter(
-      this.direction1,
-      this.direction2,
+      new BABYLON.Vector3(0.8, -0.8, 0),
+      new BABYLON.Vector3(1.5, -1.5, 0),
       this.boundingInfo.boundingBox.maximumWorld.add(new BABYLON.Vector3(-100, 0, 0)),
       this.boundingInfo.boundingBox.minimumWorld.add(new BABYLON.Vector3(0, 100, 0))
     )
@@ -62,13 +58,10 @@ export class SceneBusStop extends SceneInterface {
     ps.clipPlane2 = new BABYLON.Plane(1, 0, 0, this.boundingInfo.boundingBox.minimumWorld.x)
   }
 
-  @Particle({
-    renderOverTheScene: true,
-    capacity: 2000
-  })
+  @Particle({ renderOverScene: true })
   snowFront(particle: ParticleInterface) {
     const ps = particle.babylon.particleSystem
-    particle.setSprite(this.SnowWhite)
+    particle.setSprite(this.Snow)
     ps.createBoxEmitter(
       new BABYLON.Vector3(1.0, -1.0, 0),
       new BABYLON.Vector3(1.2, -1.2, 0),
@@ -93,23 +86,23 @@ export class SceneBusStop extends SceneInterface {
 
   onStart() {
     this.switchCamera(SceneCamera, {})
+
+    // Spawn the background sprite, by default it is placed in (0, 0, 0)
     this.background = this.spawn.sprite(this.Background)
     this.boundingInfo = this.background.babylon.mesh.getBoundingInfo()
-    this.background.position.x = 0
-    this.background.position.y = 0
-    this.background.position.z = 0
 
+    // Spawn the girl sprite
     this.spawn.sprite(SpriteGirl)
 
-    // Small and slower snow particles in back
+    // Smaller and slower snow particles in the back
     const particleBack = this.spawn.particle(this.snowBack, {})
     particleBack.start()
 
-    // Big and faster snow particles in front
+    // Bigger and faster snow particles in the front
     const particleFront = this.spawn.particle(this.snowFront, {}, new BABYLON.Vector3(10, 50, 0))
     particleFront.start()
 
-    // Lamp particles, reuse ParticleSnowLamp and apply a different setup depending if it is a white or red lamp
+    // Lamp particles, reuse ParticleSnowLamp and apply a different setup depending if it is white or red lamp
     const whiteSetup = {
       boundingInfo: this.boundingInfo,
       width: 5,
@@ -120,7 +113,7 @@ export class SceneBusStop extends SceneInterface {
       boundingInfo: this.boundingInfo,
       width: 3,
       power: 4,
-      color: new BABYLON.Color3(1, 0, 0)
+      color: new BABYLON.Color3(0.7, 0, 0)
     }
 
     // Snow from the left white lamp

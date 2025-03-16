@@ -16,7 +16,7 @@ export class MyApp extends AppInterface {
     HTMLController.initialize()
 
     // Start the first state, 5 seconds fake loading.
-    KJS.setTimeout(() => {
+    setTimeout(() => {
       this.switchState(AppStateGameIntro, {})
     }, 5000)
   }

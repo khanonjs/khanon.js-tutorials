@@ -14,8 +14,6 @@ import { GUIIntro } from './gui-intro'
  */
 @SceneState()
 export class StateIntro extends SceneStateInterface<{ introClass: string, context: string, nextAppState: AppStateConstructor }> {
-  private timeout: KJS.Timeout
-
   onStart() {
     // Show loading spinner
     HTMLController.showLoading(this.setup.introClass)
@@ -30,7 +28,7 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
     this.showGUI(GUIIntro, { onSkip: () => this.end() })
 
     // Wait 10 seconds before going to the next state.
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       this.end()
     }, 10000)
   }
@@ -38,9 +36,6 @@ export class StateIntro extends SceneStateInterface<{ introClass: string, contex
   onEnd() {
     // Hide loading spinner
     HTMLController.hideLoading()
-
-    // Clear timeout
-    KJS.clearTimeout(this.timeout)
   }
 
   /**

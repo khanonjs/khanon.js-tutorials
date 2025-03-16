@@ -6,9 +6,7 @@ import {
   SpriteConstructor
 } from '@khanonjs/engine'
 
-@Particle({
-  renderOverTheScene: true
-})
+@Particle({ renderOverScene: true })
 export class ParticleSnowLamp extends ParticleInterface<{ boundingInfo: BABYLON.BoundingInfo, width: number, color: BABYLON.Color3, power: number }> {
   @Sprite({ url: './assets/snow.png' }) Snow: SpriteConstructor
 

@@ -13,8 +13,6 @@ import { StateMenuInterface } from './state-menu-interface'
  */
 @SceneState()
 export class StateMenuLoad extends SceneStateInterface {
-  private timeout: KJS.Timeout
-
   onStart() {
     // Show loading spinner
     HTMLController.showLoading('menu-load')
@@ -26,7 +24,7 @@ export class StateMenuLoad extends SceneStateInterface {
     })
 
     // 5 seconds fake loading
-    this.timeout = KJS.setTimeout(() => {
+    this.setTimeout(() => {
       this.switchState(StateMenuInterface, {})
     }, 5000)
   }
@@ -34,8 +32,5 @@ export class StateMenuLoad extends SceneStateInterface {
   onEnd() {
     // Hide loading spinner on state end.
     HTMLController.hideLoading()
-
-    // Clear timeout
-    KJS.clearTimeout(this.timeout)
   }
 }
