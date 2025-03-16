@@ -1,4 +1,5 @@
 import {
+  Logger,
   Sprite,
   SpriteInterface
 } from '@khanonjs/engine'
