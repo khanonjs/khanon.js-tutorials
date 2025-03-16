@@ -1,7 +1,7 @@
 # Overview
 Load 2D sprites and particles into the scene.
 
-Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/03-loading-sprites).
+Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/04-loading-sprites).
 
 Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/04-loading-sprites/dist/index.html).
 
