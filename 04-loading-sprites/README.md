@@ -115,7 +115,7 @@ export class SpriteGirl extends SpriteInterface {
 
 ```
 
-## Spawning the sprites
+## Spawning sprites
 
 The girl sprite needs to be declared in the [sprites](https://khanonjs.com/api-docs/interfaces/decorators_scene.SceneProps.html#sprites) decorator prop. Then both sprites can be spawned from the *onStart* method.
 We are storing the background's bouding info `boundingInfo` to use it later. Do it calling to the background's Babylon.js mesh `background.babylon.mesh`. Khanon.js is transparent to Babylon.js objects, you will be able to access all created Babylon.js instances throught the [BabylonAccessor](https://khanonjs.com/api-docs/interfaces/models.BabylonAccessor.html) of each interface.

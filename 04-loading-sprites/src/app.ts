@@ -14,6 +14,10 @@ export class MyApp extends AppInterface {
   onStart() {
     KJS.Scene.load(SceneBusStop)
       .onComplete.add(() => {
+        const loadingBackground = window.document.getElementById('loading-background')
+        if (loadingBackground) {
+          loadingBackground.style.display = 'none'
+        }
         KJS.Scene.start(SceneBusStop)
       })
   }

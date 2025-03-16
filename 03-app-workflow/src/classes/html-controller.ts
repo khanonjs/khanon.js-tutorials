@@ -1,6 +1,6 @@
 export class HTMLController {
-  private static loadingBackground: HTMLElement
-  private static loadingScreen: HTMLElement
+  private static loadingBackground: HTMLElement | null = null
+  private static loadingScreen: HTMLElement | null = null
 
   /**
    * Get HTHML elements
@@ -14,15 +14,19 @@ export class HTMLController {
    * Show loading spinner with a specific class
    */
   static showLoading(_class: string) {
-    HTMLController.loadingBackground.style.display = 'flex'
-    HTMLController.loadingScreen.className = ''
-    HTMLController.loadingScreen.classList.add(_class)
+    if (HTMLController.loadingBackground && HTMLController.loadingScreen) {
+      HTMLController.loadingBackground.style.display = 'flex'
+      HTMLController.loadingScreen.className = ''
+      HTMLController.loadingScreen.classList.add(_class)
+    }
   }
 
   /**
    * Hide loading spinner
    */
   static hideLoading() {
-    HTMLController.loadingBackground.style.display = 'none'
+    if (HTMLController.loadingBackground) {
+      HTMLController.loadingBackground.style.display = 'none'
+    }
   }
 }
