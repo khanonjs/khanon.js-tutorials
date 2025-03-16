@@ -9,12 +9,12 @@ Art by [**Vixit**](https://x.com/Vixit_art/status/1820097429095555312). Follow h
 
 ## What will we do?
 
-In this tutorial we will compose an animated scene. This scene is composed by the static background, an animated girl waiting in the bus stop, and a bunch of different particles.
+In this tutorial we'll create an animated scene. This scene consists of a static background, an animated sprite of a girl waiting at a bus stop, and some sets of particles simulating falling snow.
 
 The falling snow is composed by 3 different particle systems, all of them using the same snow sprite:
 - Farer particles, smaller and slower.
 - Nearer particles, bigger and faster.
-- Particles illuminated by the scene lamps, which can be reused from different positions.
+- Particles illuminated by the background lamps, which can be reused from different positions.
 
 # Creating the scene
 
