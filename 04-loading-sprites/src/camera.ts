@@ -6,11 +6,11 @@ import {
 
 @Camera()
 export class SceneCamera extends CameraInterface {
-  onInitialize(scene: BABYLON.Scene) {
-    const camera = new BABYLON.UniversalCamera('camera intro', new BABYLON.Vector3(0, 0, -380), scene)
+  onInitialize(scene: BABYLON.Scene): BABYLON.Camera {
+    // Initialize a Babylon.js camera and return it
+    const camera = new BABYLON.UniversalCamera('camera', new BABYLON.Vector3(0, 0, -380), scene)
     camera.target = new BABYLON.Vector3(0, 0, 1)
     camera.inputs.clear()
-
     return camera
   }
 }

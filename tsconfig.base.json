@@ -10,7 +10,7 @@
     "strictFunctionTypes": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "preserveConstEnums": true,

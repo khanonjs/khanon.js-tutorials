@@ -1,5 +1,4 @@
 import {
-  Logger,
   Sprite,
   SpriteInterface
 } from '@khanonjs/engine'
@@ -10,7 +9,7 @@ import {
   cellHeight: 39,
   animations: [
     { id: 'move-ball', frameStart: 0, frameEnd: 18, loop: true, delay: 50 },
-    { id: 'waiting', frameStart: 19, frameEnd: 37, loop: true, delay: 60 }
+    { id: 'idle', frameStart: 19, frameEnd: 37, loop: true, delay: 60 }
   ],
   renderingGroupId: 1
 })
@@ -20,7 +19,7 @@ export class SpriteGirl extends SpriteInterface {
     this.position.y = -52
     this.position.z = 0
     const startAnimation = () => {
-      this.playAnimation(Math.random() < 0.3 ? 'move-ball' : 'waiting', {}, startAnimation)
+      this.playAnimation(Math.random() < 0.3 ? 'move-ball' : 'idle', {}, startAnimation)
     }
     startAnimation()
   }

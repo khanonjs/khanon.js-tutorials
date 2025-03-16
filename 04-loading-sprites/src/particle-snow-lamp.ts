@@ -1,18 +1,21 @@
 import * as BABYLON from '@babylonjs/core'
 import {
   Particle,
-  ParticleInterface,
-  Sprite,
-  SpriteConstructor
+  ParticleInterface
 } from '@khanonjs/engine'
 
-@Particle({ renderOverScene: true })
-export class ParticleSnowLamp extends ParticleInterface<{ boundingInfo: BABYLON.BoundingInfo, width: number, color: BABYLON.Color3, power: number }> {
-  @Sprite({ url: './assets/snow.png' }) Snow: SpriteConstructor
+import { SpriteSnow } from './sprite-snow'
 
+@Particle({
+  renderOverScene: true,
+  sprites: [
+    SpriteSnow
+  ]
+})
+export class ParticleSnowLamp extends ParticleInterface<{ boundingInfo: BABYLON.BoundingInfo, width: number, color: BABYLON.Color3, power: number }> {
   onInitialize(particle: ParticleInterface) {
     const ps = particle.babylon.particleSystem
-    particle.setSprite(this.Snow)
+    particle.setSprite(SpriteSnow)
     ps.createBoxEmitter(
       new BABYLON.Vector3(0.8, -0.8, 0),
       new BABYLON.Vector3(1.5, -1.5, 0),

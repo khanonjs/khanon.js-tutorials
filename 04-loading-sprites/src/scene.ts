@@ -5,36 +5,35 @@ import {
   Scene,
   SceneInterface,
   Sprite,
-  SpriteConstructor,
-  SpriteInterface
+  SpriteConstructor
 } from '@khanonjs/engine'
 
 import { SceneCamera } from './camera'
 import { ParticleSnowLamp } from './particle-snow-lamp'
 import { SpriteGirl } from './sprite-girl'
+import { SpriteSnow } from './sprite-snow'
 
 @Scene({
   configuration: {
-    clearColor: new BABYLON.Color4(0, 0, 0)
+    clearColor: new BABYLON.Color4(0.05, 0.05, 0.05)
   },
   sprites: [
-    SpriteGirl
+    SpriteGirl,
+    SpriteSnow
   ],
   particles: [
     ParticleSnowLamp
   ]
 })
 export class SceneBusStop extends SceneInterface {
-  private background: SpriteInterface
   private boundingInfo: BABYLON.BoundingInfo
 
   @Sprite({ url: './assets/background.png' }) Background: SpriteConstructor
-  @Sprite({ url: './assets/snow.png' }) Snow: SpriteConstructor
 
   @Particle({ renderOverScene: true })
-  snowBack(particle: ParticleInterface) {
+  snowBack(particle: ParticleInterface, setup: any) { // Equivalent to onInitialize
     const ps = particle.babylon.particleSystem
-    particle.setSprite(this.Snow)
+    particle.setSprite(SpriteSnow)
     ps.createBoxEmitter(
       new BABYLON.Vector3(0.8, -0.8, 0),
       new BABYLON.Vector3(1.5, -1.5, 0),
@@ -59,9 +58,9 @@ export class SceneBusStop extends SceneInterface {
   }
 
   @Particle({ renderOverScene: true })
-  snowFront(particle: ParticleInterface) {
+  snowFront(particle: ParticleInterface, setup: any) { // Equivalent to onInitialize
     const ps = particle.babylon.particleSystem
-    particle.setSprite(this.Snow)
+    particle.setSprite(SpriteSnow)
     ps.createBoxEmitter(
       new BABYLON.Vector3(1.0, -1.0, 0),
       new BABYLON.Vector3(1.2, -1.2, 0),
@@ -88,8 +87,8 @@ export class SceneBusStop extends SceneInterface {
     this.switchCamera(SceneCamera, {})
 
     // Spawn the background sprite, by default it is placed in (0, 0, 0)
-    this.background = this.spawn.sprite(this.Background)
-    this.boundingInfo = this.background.babylon.mesh.getBoundingInfo()
+    const background = this.spawn.sprite(this.Background)
+    this.boundingInfo = background.babylon.mesh.getBoundingInfo()
 
     // Spawn the girl sprite
     this.spawn.sprite(SpriteGirl)
