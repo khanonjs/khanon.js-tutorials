@@ -113,7 +113,7 @@ export class SceneBusStop extends SceneInterface {
       boundingInfo: this.boundingInfo,
       width: 3,
       power: 4,
-      color: new BABYLON.Color3(0.7, 0, 0)
+      color: new BABYLON.Color3(0.3, 0, 0)
     }
 
     // Snow from the left white lamp

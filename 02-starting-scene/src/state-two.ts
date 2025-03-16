@@ -10,12 +10,12 @@ import { StateOne } from './state-one'
 @SceneState()
 export class StateTwo extends SceneStateInterface {
   onStart(): void {
-    Logger.trace('Hello, State Two')
+    Logger.trace('Hello, State Two!')
     this.showGUI(SceneGUI, { stateName: 'StateTwo', onSwitchState: () => this.onSwitchState() })
   }
 
   onEnd(): void {
-    Logger.trace('Goodbye, State Two')
+    Logger.trace('Goodbye, State Two :C')
     this.hideGUI(SceneGUI)
   }
 
