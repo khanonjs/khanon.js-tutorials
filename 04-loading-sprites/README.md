@@ -5,7 +5,7 @@ Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutori
 
 Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/04-loading-sprites/dist/index.html).
 
-Art by [**Vixit**](https://x.com/Vixit_art/status/1820097429095555312). Follow her amazing job in [Instagram](https://www.instagram.com/vixit_art/) and [X](https://x.com/Vixit_art).
+Art by [**Vixit**](https://x.com/Vixit_art/status/1820097429095555312). Follow Vixit's amazing job in [Instagram](https://www.instagram.com/vixit_art/) and [X](https://x.com/Vixit_art).
 
 ## What will we do?
 
