@@ -1,22 +1,29 @@
 import {
   App,
   AppInterface,
+  KJS,
   Logger
 } from '@khanonjs/engine'
 
+// import { SceneBusStop } from './scene'
+
 @App({
-  name: '01-blank-project'
+  name: '06-working-with-actors'
 })
 export class MyApp extends AppInterface {
   onStart() {
-    // Entry point of your app
+    // Load the scene
+    /* KJS.Scene.load(SceneBusStop)
+      .onComplete.add(() => {
+        // Hide loading background
+        const loadingBackground = window.document.getElementById('loading-background')
+        if (loadingBackground) {
+          loadingBackground.style.display = 'none'
+        }
 
-    // Use trace logs to easily debug your project. Trace logs are highlighted in purple in the browser console.
-    Logger.trace('Hello world!')
-  }
-
-  onClose() {
-    Logger.info('App onClose')
+        // Start the scene
+        KJS.Scene.start(SceneBusStop)
+      }) */
   }
 
   onError(error?: string) {
