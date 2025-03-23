@@ -68,7 +68,7 @@ export class GUIInfo extends GUIInterface<{ context: string, seconds?: number }>
     this.input.text = `
       App state:       ${KJS.getApp().state?.getClassName()}
       Scene:            ${this.scene.getClassName()}
-      Scene State:  ${this.scene.state.getClassName()}
+      Scene State:  ${this.scene.state?.getClassName()}
       Context:         ${this.setup.context}
       ${seconds !== undefined ? ('Seconds:        ' + seconds) : ''}
       `

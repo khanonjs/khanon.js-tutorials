@@ -3,6 +3,8 @@ In this tutorial we will see how to manage the workflow of an application simula
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/03-app-workflow).
 
+Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/03-app-workflow/dist/index.html).
+
 # Workflow diagram
 
 Let's analyze the workflow our app will follow in this tutorial:

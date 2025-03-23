@@ -3,6 +3,8 @@ Start the first *scene* and switch to different *scene states*.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-starting-scene).
 
+Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/02-starting-scene/dist/index.html).
+
 # Creating the app class
 
 As we saw in the preivous tutorial, [App](https://khanonjs.com/api-docs/modules/decorators_app.html) class is the main class of the application where the action begins.

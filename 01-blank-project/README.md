@@ -3,6 +3,8 @@ Start a project from scratch with the minimum codebase.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
+Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/01-blank-project/dist/index.html).
+
 # Project structure
 
 A Khanon.js project typically consists of the `root` files, `src` folder, and `public` folder.
