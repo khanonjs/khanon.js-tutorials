@@ -12,12 +12,16 @@ import { SceneBusStop } from './scene'
 })
 export class MyApp extends AppInterface {
   onStart() {
+    // Load the scene
     KJS.Scene.load(SceneBusStop)
       .onComplete.add(() => {
+        // Hide loading background
         const loadingBackground = window.document.getElementById('loading-background')
         if (loadingBackground) {
           loadingBackground.style.display = 'none'
         }
+
+        // Start the scene
         KJS.Scene.start(SceneBusStop)
       })
   }
