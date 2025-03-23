@@ -1,7 +1,7 @@
 # Overview
-Start a 3D application, render your first meshes.
+Compose a 3D scene and add 3D animated characters.
 
-This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/03-starting-3d-application).
+This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/05-loading-meshes).
 
 Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubusercontent.com/khanonjs/khanon.js-tutorials/refs/heads/main/05-loading-meshes/dist/index.html).
 

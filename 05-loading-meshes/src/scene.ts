@@ -46,13 +46,13 @@ export class SceneBusStop extends SceneInterface {
 
     // Add four Armabee
     positions = [
-      new BABYLON.Vector3(-3, 2 + Math.random() * 2, 1 + Math.random()),
-      new BABYLON.Vector3(-1.2, 2 + Math.random() * 2, 1 + Math.random()),
-      new BABYLON.Vector3(0.6, 2 + Math.random() * 2, 1 + Math.random()),
-      new BABYLON.Vector3(2, 2 + Math.random() * 2, 1 + Math.random())
+      new BABYLON.Vector3(-3, 2 + Math.random() * 2, -1 + Math.random()),
+      new BABYLON.Vector3(-1.2, 2 + Math.random() * 2, -1 + Math.random()),
+      new BABYLON.Vector3(0.6, 2 + Math.random() * 2, -1 + Math.random()),
+      new BABYLON.Vector3(2, 2 + Math.random() * 2, -1 + Math.random())
     ]
     this.spawn.mesh(this.Armabee, 4, (mesh, index) => {
-      mesh.scaling = new BABYLON.Vector3(0.5, 0.5, 0.5)
+      mesh.scaling = new BABYLON.Vector3(0.3, 0.3, 0.3)
       mesh.position = positions[index]
       mesh.lookAt(this.getCamera().position)
       this.setTimeout(() => mesh.playAnimation('idle'), Math.random() * 1000)
