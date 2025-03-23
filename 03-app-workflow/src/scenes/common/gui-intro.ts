@@ -32,7 +32,7 @@ export class GUIIntro extends GUIInterface<{ onSkip: () => void }> {
     button.width = '150px'
     button.height = '40px'
     button.color = 'rgb(210, 210, 210)'
-    button.background = 'rgb(80, 37, 92)'
+    button.background = 'rgb(30, 30, 30)'
     button.onPointerUpObservable.add(() => {
       this.setup.onSkip()
     })

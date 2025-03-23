@@ -136,7 +136,7 @@ body {
 }
 
 .game-intro::before {
-    content: "Game intro is being reproduced";
+    content: "The game intro is being reproduced";
     color: #0000;
     padding: 0 5px;
     background: inherit;
