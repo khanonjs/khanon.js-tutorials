@@ -6,14 +6,14 @@ const tutorials = [
   '02-starting-scene',
   '03-app-workflow',
   '04-loading-sprites',
-  '05-loading-meshes',
+  '05-creating-3d-scene',
   '06-working-with-actors',
   '07-creating-simple-2d-game',
   '08-creating-simple-3d-game',
 ]
 
 const babylonjs_version = '~7.50.0'
-const khanonjsjs_version = '0.1.21'
+const khanonjsjs_version = '0.1.22'
 
 tutorials.forEach(tutorialName => {
    console.log(`Updating packages for tutorial '${tutorialName}'...`)

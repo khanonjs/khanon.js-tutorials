@@ -11,7 +11,7 @@ Let's analyze the workflow our app will follow in this tutorial:
 
 ![App worfflow](https://github.com/khanonjs/khanon.js-tutorials/blob/main/03-app-workflow/workflow-diagram.jpg?raw=true "App worfflow")
 
-- The app starts displaying a `HTML loading screen`. At this point nothing has been loaded, so we need to show something while the Babylon.js engine starts.
+- The app starts displaying a `HTML loading screen`. At this point nothing has been loaded, so we need to show something while Babylon's engine starts.
 - Once Babylon.js is ready, Khanon.js starts the app and it goes to the `app state game intro`, where an intro animation could be shown thru the *game intro scene*.
 - After the intro, the app goes to the `app state main menu`, where *main menu scene* has a first *loading state* from where it loads asynchronous data, and a second *menu interface state* that displays the GUI to allow the user to start doing things.
 - In our tutorial the user can only choose to play the game from the menu interface, driving the app to the `app state play game`.

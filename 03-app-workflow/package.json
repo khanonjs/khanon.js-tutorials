@@ -1,5 +1,5 @@
 {
-  "name": "05-app-workflow",
+  "name": "03-app-workflow",
   "version": "0.0.1",
   "description": "Khanon.js tutorial - 05 App workflow",
   "main": "index.html",
@@ -24,6 +24,6 @@
   "dependencies": {
     "@babylonjs/core": "~7.50.0",
     "@babylonjs/gui": "~7.50.0",
-    "@khanonjs/engine": "0.1.21"
+    "@khanonjs/engine": "0.1.22"
   }
 }
