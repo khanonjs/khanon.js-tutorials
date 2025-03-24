@@ -9,7 +9,7 @@ Background Art [Pretty park set](https://poly.pizza/bundle/Pretty-park-set-G2WIN
 
 Characters Art [Ultimate Monsters Bundle](https://poly.pizza/bundle/Ultimate-Monsters-Bundle-5oyGWAmOB6) by [Quaternius](https://poly.pizza/u/Quaternius) via Poly Pizza.
 
-## What will we do?
+## Goal of this tutorial
 
 In this tutorial we will compose a 3D scene with a background, a custom skybox and light, a particle system, and some 3D animated characters. The animated characters will be playing random animations after a number of *idle* loops.
 
@@ -292,6 +292,6 @@ The scene is now composed. We loaded the background from a file, added custom sl
 
 As you see, 2D sprites and 3D meshes are defined in a quite similar way. They both are generated in the 3D environment, they use similar transform methods, and are spawned in the same way. The only differece is that sprites are always facing the camera, they are plane, and lights don't affect them. Instead, meshes are affected by the environment lights, and can be seen 360 dergrees around them. 3D scenes can also be loaded from files.
 
-The particles used for 2D apps are the same than for 3D apps, but for the [renderOverScene](https://khanonjs.com/api-docs/interfaces/decorators_particle.ParticleProps.html#renderOverScene) property, which use to be *true* in 2D apps and *false* in 3D apps.
+The particles used for 2D games are the same than for 3D games, but for the [renderOverScene](https://khanonjs.com/api-docs/interfaces/decorators_particle.ParticleProps.html#renderOverScene) property, which use to be *true* in 2D games and *false* in 3D games.
 
 Apart of reusing Khanon.js components, we can also inherit from base classes that implement a common logic to different decorated classes.
