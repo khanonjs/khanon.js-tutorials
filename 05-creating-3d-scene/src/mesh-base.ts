@@ -9,13 +9,12 @@ export class MeshBase extends MeshInterface {
       () => {
         --idleRepeat
         if (idleRepeat === 0) {
-          this.idleToRandomAnimation(idle, randomList)
           // When the loop is completed, play any animation from the random Ids list
-          /* this.playAnimation(randomList[Math.floor(Math.random() * randomList.length)], {},
+          this.playAnimation(randomList[Math.floor(Math.random() * randomList.length)], {},
             () => {
               // On complete, start again
               this.idleToRandomAnimation(idle, randomList)
-            }) */
+            })
         }
       })
   }

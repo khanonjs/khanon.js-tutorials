@@ -5,7 +5,7 @@ import {
   Logger
 } from '@khanonjs/engine'
 
-import { SceneBusStop } from './scene'
+import { SceneMonsters } from './scene'
 
 @App({
   name: '05-creating-3d-scene'
@@ -13,7 +13,7 @@ import { SceneBusStop } from './scene'
 export class MyApp extends AppInterface {
   onStart() {
     // Load the scene
-    KJS.Scene.load(SceneBusStop)
+    KJS.Scene.load(SceneMonsters)
       .onComplete.add(() => {
         // Hide loading background
         const loadingBackground = window.document.getElementById('loading-background')
@@ -22,7 +22,7 @@ export class MyApp extends AppInterface {
         }
 
         // Start the scene
-        KJS.Scene.start(SceneBusStop)
+        KJS.Scene.start(SceneMonsters)
       })
   }
 

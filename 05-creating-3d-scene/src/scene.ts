@@ -24,7 +24,7 @@ import { ParticleFountain } from './particle-fountain'
     ParticleFountain
   ]
 })
-export class SceneBusStop extends SceneInterface {
+export class SceneMonsters extends SceneInterface {
   private light?: BABYLON.HemisphericLight
   private skybox?: BABYLON.Mesh
 
