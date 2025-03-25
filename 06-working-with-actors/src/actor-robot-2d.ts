@@ -23,5 +23,7 @@ export class ActorRobot2D extends ActorInterface<SpriteInterface> {
 
   onSpawn(): void {
     this.setBody(this.Body)
+    this.t.scale = 0.035
+    this.t.position.set(1, 1.55, 0)
   }
 }

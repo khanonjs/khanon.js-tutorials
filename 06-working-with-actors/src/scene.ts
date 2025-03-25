@@ -4,6 +4,8 @@ import {
   SceneInterface
 } from '@khanonjs/engine'
 
+import { ActorDoor2D } from './actor-door-2d'
+import { ActorDoor3D } from './actor-door-3d'
 import { ActorRobot2D } from './actor-robot-2d'
 import { ActorRobot3D } from './actor-robot-3d'
 import { SceneCamera } from './camera'
@@ -13,6 +15,8 @@ import { SceneCamera } from './camera'
     clearColor: new BABYLON.Color4(0.05, 0.05, 0.05)
   },
   actors: [
+    ActorDoor2D,
+    ActorDoor3D,
     ActorRobot2D,
     ActorRobot3D
   ]
@@ -21,15 +25,14 @@ export class SceneActors extends SceneInterface {
   private light?: BABYLON.HemisphericLight
 
   onStart() {
+    // Switch camera
     this.switchCamera(SceneCamera, {})
 
-    const robot2D = this.spawn.actor(ActorRobot2D)
-    robot2D.t.scale = 0.035
-    robot2D.t.position.set(1, 1, 0)
-
-    const robot3D = this.spawn.actor(ActorRobot3D)
-    robot3D.t.scaling.set(0.2, 0.2, 0.2)
-    robot3D.t.position.set(0, 0.5, 0)
+    // Spawn both actors
+    this.spawn.actor(ActorDoor2D)
+    this.spawn.actor(ActorDoor3D)
+    this.spawn.actor(ActorRobot2D)
+    this.spawn.actor(ActorRobot3D)
   }
 
   onLoaded(): void {

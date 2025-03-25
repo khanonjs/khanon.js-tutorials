@@ -20,5 +20,7 @@ export class ActorRobot3D extends ActorInterface<MeshInterface> {
 
   onSpawn(): void {
     this.setBody(this.Body)
+    this.t.scaling.setAll(0.2)
+    this.t.position.set(0, 1, 0)
   }
 }
