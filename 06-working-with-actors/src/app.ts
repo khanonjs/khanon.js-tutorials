@@ -5,7 +5,7 @@ import {
   Logger
 } from '@khanonjs/engine'
 
-// import { SceneBusStop } from './scene'
+import { SceneActors } from './scene'
 
 @App({
   name: '06-working-with-actors'
@@ -13,7 +13,7 @@ import {
 export class MyApp extends AppInterface {
   onStart() {
     // Load the scene
-    /* KJS.Scene.load(SceneBusStop)
+    KJS.Scene.load(SceneActors)
       .onComplete.add(() => {
         // Hide loading background
         const loadingBackground = window.document.getElementById('loading-background')
@@ -22,8 +22,8 @@ export class MyApp extends AppInterface {
         }
 
         // Start the scene
-        KJS.Scene.start(SceneBusStop)
-      }) */
+        KJS.Scene.start(SceneActors)
+      })
   }
 
   onError(error?: string) {
