@@ -1,13 +1,17 @@
 import {
   Actor,
-  ActorInterface,
   Mesh,
   MeshConstructor,
   MeshInterface
 } from '@khanonjs/engine'
 
+import { ActorMovable } from './actor-movable'
+
 @Actor()
-export class ActorRobot3D extends ActorInterface<MeshInterface> {
+export class ActorRobot3D extends ActorMovable<MeshInterface> {
+  animationId_Idle = 'RobotArmature|Robot_Idle'
+  animationId_Walk = 'RobotArmature|Robot_Walking'
+
   @Mesh({
     url: './assets/robot-3d.glb',
     animations: [
@@ -22,5 +26,13 @@ export class ActorRobot3D extends ActorInterface<MeshInterface> {
     this.setBody(this.Body)
     this.t.scaling.setAll(0.2)
     this.t.position.set(0, 1, 0)
+  }
+
+  lookRight(): void {
+
+  }
+
+  lookLeft(): void {
+
   }
 }

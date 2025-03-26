@@ -21,5 +21,6 @@ export class ActorDoor3D extends ActorInterface<MeshInterface> {
     this.setBody(this.Body)
     this.t.scaling.setAll(0.7)
     this.t.position.set(-4, 1, 0)
+    this.t.rotation = new BABYLON.Vector3(0, 2.87, 0.07)
   }
 }

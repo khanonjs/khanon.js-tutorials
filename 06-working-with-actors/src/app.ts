@@ -6,6 +6,7 @@ import {
 } from '@khanonjs/engine'
 
 import { SceneActors } from './scene'
+import { SceneState2D } from './scene-state-2d'
 
 @App({
   name: '06-working-with-actors'
@@ -22,7 +23,7 @@ export class MyApp extends AppInterface {
         }
 
         // Start the scene
-        KJS.Scene.start(SceneActors)
+        KJS.Scene.start(SceneActors, SceneState2D)
       })
   }
 

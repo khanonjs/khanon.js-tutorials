@@ -4,21 +4,21 @@ import {
   SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoor2D } from './actor-door-2d'
-import { ActorDoor3D } from './actor-door-3d'
-import { ActorRobot2D } from './actor-robot-2d'
-import { ActorRobot3D } from './actor-robot-3d'
+import { ActorDoor2D } from './actors/actor-door-2d'
+import { ActorDoor3D } from './actors/actor-door-3d'
+import { ActorRobot2D } from './actors/actor-robot-2d'
+import { ActorRobot3D } from './actors/actor-robot-3d'
 import { SceneCamera } from './camera'
+import { SceneState2D } from './scene-state-2d'
+import { SceneState3D } from './scene-state-3d'
 
 @Scene({
   configuration: {
     clearColor: new BABYLON.Color4(0.05, 0.05, 0.05)
   },
-  actors: [
-    ActorDoor2D,
-    ActorDoor3D,
-    ActorRobot2D,
-    ActorRobot3D
+  states: [
+    SceneState2D,
+    SceneState3D
   ]
 })
 export class SceneActors extends SceneInterface {
@@ -28,11 +28,11 @@ export class SceneActors extends SceneInterface {
     // Switch camera
     this.switchCamera(SceneCamera, {})
 
-    // Spawn both actors
-    this.spawn.actor(ActorDoor2D)
-    this.spawn.actor(ActorDoor3D)
-    this.spawn.actor(ActorRobot2D)
-    this.spawn.actor(ActorRobot3D)
+    // // Spawn both actors
+    // this.spawn.actor(ActorDoor2D)
+    // this.spawn.actor(ActorDoor3D)
+    // this.spawn.actor(ActorRobot2D)
+    // this.spawn.actor(ActorRobot3D)
   }
 
   onLoaded(): void {

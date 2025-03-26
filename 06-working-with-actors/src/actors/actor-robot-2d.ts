@@ -1,14 +1,21 @@
 import * as BABYLON from '@babylonjs/core'
 import {
   Actor,
-  ActorInterface,
   Sprite,
   SpriteConstructor,
   SpriteInterface
 } from '@khanonjs/engine'
 
-@Actor()
-export class ActorRobot2D extends ActorInterface<SpriteInterface> {
+import { ActorMovable } from './actor-movable'
+
+@Actor({
+  renderingGroupId: 1
+})
+export class ActorRobot2D extends ActorMovable<SpriteInterface> {
+  animationId_Idle = 'idle'
+  animationId_Walk = 'walk'
+  private scale = 0.030
+
   @Sprite({
     url: './assets/robot-2d.png',
     cellWidth: 34,
@@ -22,8 +29,17 @@ export class ActorRobot2D extends ActorInterface<SpriteInterface> {
   }) Body: SpriteConstructor
 
   onSpawn(): void {
+    super.onSpawn()
     this.setBody(this.Body)
-    this.t.scale = 0.035
-    this.t.position.set(1, 1.55, 0)
+    this.t.scale = this.scale
+    this.t.position.set(1, 1.50, 0)
+  }
+
+  lookRight(): void {
+    this.t.scaleX = -this.scale
+  }
+
+  lookLeft(): void {
+    this.t.scaleX = this.scale
   }
 }
