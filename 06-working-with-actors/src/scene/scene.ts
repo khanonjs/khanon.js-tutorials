@@ -4,13 +4,13 @@ import {
   SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoor2D } from './actors/actor-door-2d'
-import { ActorDoor3D } from './actors/actor-door-3d'
-import { ActorRobot2D } from './actors/actor-robot-2d'
-import { ActorRobot3D } from './actors/actor-robot-3d'
+import { ActorDoor2D } from '../actors-door/actor-door-2d'
+import { ActorDoor3D } from '../actors-door/actor-door-3d'
+import { ActorRobot2D } from '../actors-robot/robot-2d'
+import { ActorRobot3D } from '../actors-robot/robot-3d'
 import { SceneCamera } from './camera'
-import { SceneState2D } from './scene-state-2d'
-import { SceneState3D } from './scene-state-3d'
+import { SceneState2D } from './state-2d'
+import { SceneState3D } from './state-3d'
 
 @Scene({
   configuration: {
@@ -28,7 +28,7 @@ export class SceneActors extends SceneInterface {
     // Switch camera
     this.switchCamera(SceneCamera, {})
 
-    // // Spawn both actors
+    // Spawn both actors
     // this.spawn.actor(ActorDoor2D)
     // this.spawn.actor(ActorDoor3D)
     // this.spawn.actor(ActorRobot2D)

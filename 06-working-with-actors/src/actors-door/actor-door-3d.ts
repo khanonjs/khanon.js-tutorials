@@ -1,19 +1,24 @@
 import * as BABYLON from '@babylonjs/core'
 import {
   Actor,
-  ActorInterface,
   Logger,
   Mesh,
   MeshConstructor,
   MeshInterface
 } from '@khanonjs/engine'
 
+import { ActorDoorBase } from './actor-door-base'
+
 @Actor()
-export class ActorDoor3D extends ActorInterface<MeshInterface> {
+export class ActorDoor3D extends ActorDoorBase<MeshInterface> {
+  animationId_Open = 'door|door|open|Animation Base Layer'
+  animationId_Close = 'door|door|close|Animation Base Layer'
+
   @Mesh({
     url: './assets/red-door-3d.glb',
     animations: [
-      { id: 'open-and-close', loop: false }
+      { id: 'door|door|open|Animation Base Layer', loop: false },
+      { id: 'door|door|close|Animation Base Layer', loop: false }
     ]
   }) Body: MeshConstructor
 

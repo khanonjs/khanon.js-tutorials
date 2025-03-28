@@ -5,8 +5,8 @@ import {
   Logger
 } from '@khanonjs/engine'
 
-import { SceneActors } from './scene'
-import { SceneState2D } from './scene-state-2d'
+import { SceneActors } from './scene/scene'
+import { SceneState2D } from './scene/state-2d'
 
 @App({
   name: '06-working-with-actors'

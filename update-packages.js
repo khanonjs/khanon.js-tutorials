@@ -13,7 +13,7 @@ const tutorials = [
 ]
 
 const babylonjs_version = '~7.50.0'
-const khanonjsjs_version = '0.1.26'
+const khanonjsjs_version = '0.1.29'
 
 tutorials.forEach(tutorialName => {
    console.log(`Updating packages for tutorial '${tutorialName}'...`)

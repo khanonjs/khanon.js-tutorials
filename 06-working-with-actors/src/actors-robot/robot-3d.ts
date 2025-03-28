@@ -1,14 +1,25 @@
 import {
   Actor,
+  ActorInterface,
   Mesh,
   MeshConstructor,
   MeshInterface
 } from '@khanonjs/engine'
 
-import { ActorMovable } from './actor-movable'
+import { ActionPointerMove } from './action-pointer-move'
+import { ActorRobotBase } from './robot-base'
+import { StateDoorSeek } from './state-door-seek'
 
-@Actor()
-export class ActorRobot3D extends ActorMovable<MeshInterface> {
+@Actor({
+  states: [
+    StateDoorSeek
+  ],
+  actions: [
+    ActionPointerMove
+  ],
+  renderingGroupId: 1
+})
+export class ActorRobot3D extends ActorRobotBase<MeshInterface> {
   animationId_Idle = 'RobotArmature|Robot_Idle'
   animationId_Walk = 'RobotArmature|Robot_Walking'
 
