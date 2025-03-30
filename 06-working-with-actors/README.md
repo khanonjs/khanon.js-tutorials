@@ -72,9 +72,9 @@ export class SceneState3D extends SceneStateBase {
 
 We also created a camera, and we can now create the scene and app classes.
 
-The scene defines a notification method within it, that will receive any notification id `FINISH_STAGE` sent to it. Notifications can be sent using the [KJS.Notify.send](https://khanonjs.com/api-docs/functions/kjs.KJS.Notify.send.html) method from anywhere, to any element that defined it using the [Notification](https://khanonjs.com/api-docs/functions/decorators_notification.Notification.html) decorator.
+The scene defines a notification method within it, that will receive any notification id `FINISH_STAGE` sent to it. Notifications can be sent using the [KJS.Notify.send](https://khanonjs.com/api-docs/functions/kjs.KJS.Notify.send.html) method from anywhere, to any element that defined it using the [Notification](https://khanonjs.com/api-docs/functions/decorators_notification.Notification.html) method decorator.
 
-Everytime the scene receives a `FINISH_STAGE` notification, it will swap between 2D and 3D states. That's all the logic the scene will do.
+Everytime the scene receives a `FINISH_STAGE` notification, it will swap between 2D and 3D states. That's all the logic the scene runs.
 
 **src/scene/scene.ts**
 ```
@@ -129,7 +129,7 @@ export class SceneActors extends SceneInterface {
 }
 ```
 
-The app just load and run the scene.
+The app just loads and runs the scene.
 
 # App
 
@@ -158,11 +158,11 @@ export class MyApp extends AppInterface {
 
 # Actors
 
-It is time to create the actors we will use in our scene. There are: 2D robot and 2D door; 3D robot and 3D door. Robots will to the tap direction when the user clicks or taps the screen. The doors will open when the robot is in front of them.
+It is time to create the actors we will use in our scene. They are 2D robot and 2D door; 3D robot and 3D door. Robots will go to the tap direction when the user clicks or taps the screen. The doors will open when the robot is in front of them.
 
-Let's being by the doors, which have a simpler logic.
+Let's begin by the doors, which have a simpler logic.
 
-Create the door base class. This class open and close the door using an animation Id that will be provided by children class using the abstract properties `animationId_Open` and `animationId_Close`. Abstract properties are properties that parent demands to children classes, and which will be available to the parent itself. In that way, we can use the same logic for both 2D and 3D children doors.
+Create the door base class. This class *open* and *close* the door using an animation Id that will be provided by children classes using the abstract properties `animationId_Open` and `animationId_Close`. Abstract properties are properties that a parent class demands to children classes, and which will be available in the parent itself. Using this base class, we can share and run the same logic in 2D and 3D door.
 
 The base class extends [ActorInterface](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html), which also demands what type of actor it will be (2D sprite or 3D Mesh). That generic type will be defined in children door classes extending `ActorDoorBase`, and therefore passed to *ActorInterface*. The actor type is provided by *SpriteInterface* or *SpriteInterface* in the first generic `B`.
 
@@ -367,7 +367,7 @@ export class ActionPointerMove extends ActorActionInterface<{
 }
 ```
 
-Now the final state `StateEnterDoor`, which plays a jump animation and sends the `FINISH_STAGE` notification `KJS.Notify.send(Messages.FINISH_STAGE)`.
+The final state is `StateEnterDoor`, which plays a jump animation and sends the `FINISH_STAGE` notification calling the [KJS.Notify.send](https://khanonjs.com/api-docs/functions/kjs.KJS.Notify.send.html) method.
 
 **src/actors-robot/state-enter-door.ts**
 ```
