@@ -9,11 +9,13 @@ import {
 
 import { ActionPointerMove } from './action-pointer-move'
 import { ActorRobotBase } from './robot-base'
+import { StateDoorSeek } from './state-door-seek'
 import { StateEnterDoor } from './state-enter-door'
 
 @Actor({
   states: [
-    StateEnterDoor
+    StateEnterDoor,
+    StateDoorSeek
   ],
   actions: [
     ActionPointerMove

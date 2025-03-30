@@ -4,12 +4,12 @@ import {
   SpriteInterface
 } from '@khanonjs/engine'
 
-export abstract class ActorDoorBase<B extends SpriteInterface | MeshInterface = any> extends ActorInterface<B> {
+export abstract class ActorDoorBase<B extends SpriteInterface | MeshInterface = SpriteInterface | MeshInterface> extends ActorInterface<B> {
   abstract animationId_Open: string
   abstract animationId_Close: string
 
   open() {
-    if (this.body.animation?.id !== this.animationId_Open) {
+    if (this.body.animation?.id === this.animationId_Close) {
       this.body.playAnimation(this.animationId_Open)
     }
   }

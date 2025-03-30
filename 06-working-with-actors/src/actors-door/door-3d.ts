@@ -27,6 +27,5 @@ export class ActorDoor3D extends ActorDoorBase<MeshInterface> {
     this.t.position.set(1.5, 1, 0)
     this.body.playAnimation(this.animationId_Close)
     this.t.rotationQuaternion = new BABYLON.Vector3(0.05, -Math.PI / 2 + 0.3, 0).toQuaternion()
-    this.t.locallyTranslate(new BABYLON.Vector3(0, 0, 0))
   }
 }
