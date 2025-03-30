@@ -12,8 +12,8 @@ const tutorials = [
   '08-creating-simple-3d-game',
 ]
 
-const babylonjs_version = '~7.50.0'
-const khanonjsjs_version = '0.1.44'
+const babylonjs_version = '~8.0.1'
+const khanonjsjs_version = '0.1.45'
 
 tutorials.forEach(tutorialName => {
    console.log(`Updating packages for tutorial '${tutorialName}'...`)
