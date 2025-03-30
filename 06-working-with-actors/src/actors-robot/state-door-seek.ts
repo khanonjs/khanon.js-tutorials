@@ -1,16 +1,16 @@
 import {
-  ActorInterface,
   ActorState,
   ActorStateInterface,
-  Logger
+  SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoorBase } from '../actors-door/actor-door-base'
+import { ActorDoorBase } from '../actors-door/door-base'
 import { ActionPointerMove } from './action-pointer-move'
 import { ActorRobotBase } from './robot-base'
+import { StateEnterDoor } from './state-enter-door'
 
 @ActorState()
-export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase<any> }, any, ActorRobotBase<any>> {
+export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase }, SceneInterface, ActorRobotBase> {
   DIST_ENTER_DOOR = 0.3
 
   onStart() {
@@ -19,8 +19,8 @@ export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase<any
       this.actor.playAction(ActionPointerMove, {
         lookLeft: () => this.actor.lookLeft(),
         lookRight: () => this.actor.lookRight(),
-        animationId_Idle: 'idle',
-        animationId_Walk: 'walk'
+        animationId_Idle: this.actor.animationId_Idle,
+        animationId_Walk: this.actor.animationId_Walk
       })
     }
 
@@ -30,18 +30,21 @@ export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase<any
     }
   }
 
-  onEnd(): void {
+  onEnd() {
+    this.actor.stopAction(ActionPointerMove)
     this.babylon.scene.onPointerDown = undefined
     this.babylon.scene.onPointerUp = undefined
   }
 
-  onLoopUpdate(delta: number): void {
+  onLoopUpdate(delta: number) {
     const dist = Math.abs(this.actor.t.position.x - this.setup.door.t.position.x)
     if (dist < this.DIST_ENTER_DOOR) {
       this.setup.door.open()
+      if (!this.actor.getAction(ActionPointerMove)?.isMoving()) {
+        this.actor.switchState(StateEnterDoor, { door: this.setup.door })
+      }
     } else {
       this.setup.door.close()
     }
-    Logger.trace('aki dist', dist)
   }
 }

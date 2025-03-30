@@ -1,14 +1,12 @@
 import * as BABYLON from '@babylonjs/core'
 import {
+  Notification,
   Scene,
   SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoor2D } from '../actors-door/actor-door-2d'
-import { ActorDoor3D } from '../actors-door/actor-door-3d'
-import { ActorRobot2D } from '../actors-robot/robot-2d'
-import { ActorRobot3D } from '../actors-robot/robot-3d'
 import { SceneCamera } from './camera'
+import { Messages } from './messages'
 import { SceneState2D } from './state-2d'
 import { SceneState3D } from './state-3d'
 
@@ -24,15 +22,18 @@ import { SceneState3D } from './state-3d'
 export class SceneActors extends SceneInterface {
   private light?: BABYLON.HemisphericLight
 
+  @Notification({ id: Messages.FINISH_STAGE })
+  swapState() {
+    if (this.isState(SceneState2D)) {
+      this.switchState(SceneState3D, {})
+    } else {
+      this.switchState(SceneState2D, {})
+    }
+  }
+
   onStart() {
     // Switch camera
     this.switchCamera(SceneCamera, {})
-
-    // Spawn both actors
-    // this.spawn.actor(ActorDoor2D)
-    // this.spawn.actor(ActorDoor3D)
-    // this.spawn.actor(ActorRobot2D)
-    // this.spawn.actor(ActorRobot3D)
   }
 
   onLoaded(): void {

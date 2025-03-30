@@ -10,3 +10,9 @@ Watch the preview [here](https://html-preview.github.io/?url=https://raw.githubu
 <!-- Characters Art [Ultimate Monsters Bundle](https://poly.pizza/bundle/Ultimate-Monsters-Bundle-5oyGWAmOB6) by [Quaternius](https://poly.pizza/u/Quaternius) via Poly Pizza. -->
 
 ## Purpose of this tutorial
+
+In this tutorial we will see how to work with actors, the basic things they can do, and some simple interactions.
+We will also see how to get advantage of object oriented programming (OOP), working with generic types.
+
+## App workflow
+

@@ -57,6 +57,10 @@ export class ActionPointerMove extends ActorActionInterface<{
     }
   }
 
+  isMoving() {
+    return this.vel !== 0
+  }
+
   private stopMoving() {
     // Stop velocity and play animation idle
     this.vel = 0

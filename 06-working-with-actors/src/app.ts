@@ -21,8 +21,7 @@ export class MyApp extends AppInterface {
         if (loadingBackground) {
           loadingBackground.style.display = 'none'
         }
-
-        // Start the scene
+        // Begin by the 2D scene
         KJS.Scene.start(SceneActors, SceneState2D)
       })
   }

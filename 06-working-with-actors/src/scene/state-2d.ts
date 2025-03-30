@@ -1,11 +1,8 @@
-import {
-  SceneState,
-  SceneStateInterface
-} from '@khanonjs/engine'
+import { SceneState } from '@khanonjs/engine'
 
-import { ActorDoor2D } from '../actors-door/actor-door-2d'
+import { ActorDoor2D } from '../actors-door/door-2d'
 import { ActorRobot2D } from '../actors-robot/robot-2d'
-import { StateDoorSeek } from '../actors-robot/state-door-seek'
+import { SceneStateBase } from './state-base'
 
 @SceneState({
   actors: [
@@ -13,20 +10,18 @@ import { StateDoorSeek } from '../actors-robot/state-door-seek'
     ActorRobot2D
   ]
 })
-export class SceneState2D extends SceneStateInterface {
-  robot: ActorRobot2D
+export class SceneState2D extends SceneStateBase {
   door: ActorDoor2D
+  robot: ActorRobot2D
+  visibility = 0
 
   onStart() {
-    // Spawn robot and door
+    // Spawn 2D door
     this.door = this.spawn.actor(ActorDoor2D)
+    this.door.visibility = this.visibility
+
+    // Spawn 2D robot
     this.robot = this.spawn.actor(ActorRobot2D)
-
-    // Go to robot StateDoorSeek
-    this.robot.switchState(StateDoorSeek, { door: this.door })
-  }
-
-  onEnd() {
-
+    this.robot.visibility = this.visibility
   }
 }
