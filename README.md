@@ -6,13 +6,6 @@ Clone this repo to your local drive to get access to all tutorials.
 
 Khanon.js website: [https://www.khanonjs.com](https://www.khanonjs.com)
 
-{ title: 'Preparing a blank project', file: '01-blank-project' },
-      { title: 'Starting a scene', file: '02-starting-scene' },
-      { title: 'App workflow', file: '03-app-workflow' },
-      { title: 'Loading 2D sprites and particles', file: '04-loading-sprites' },
-      { title: 'Creating a 3D scene', file: '05-creating-3d-scene' },
-      { title: 'Working with actors', file: '06-working-with-actors' },
-
 ## 01 Preparing a blank project
 Start a project from scratch with the minimum codebase.
 
