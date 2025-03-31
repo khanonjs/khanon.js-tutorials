@@ -1,5 +1,5 @@
 # Overview
-In this tutorial we will see how to manage the workflow of an application simulating a video game workflow.
+Manage the workflow of an application simulating a video game workflow.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/03-app-workflow).
 

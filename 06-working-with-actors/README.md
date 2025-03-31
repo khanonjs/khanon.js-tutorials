@@ -1,5 +1,5 @@
 # Overview
-Work with actors. Compose them, play actions and states.
+Work with actors. Build them, play actions and states.
 
 This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/06-working-with-actors).
 
