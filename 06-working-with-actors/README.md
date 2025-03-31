@@ -170,7 +170,7 @@ It is not usual to have a base class for both 2D and 3D actors, normally you wil
 
 The `body` is the main sprite or mesh used to compose the actor. We will set it in children classes.
 
-**src/actors-door/door-base.ts**
+**src/actor-doors/door-base.ts**
 ```
 export abstract class ActorDoorBase<B extends SpriteInterface | MeshInterface = SpriteInterface | MeshInterface> extends ActorInterface<B> {
   abstract animationId_Open: string
@@ -193,7 +193,7 @@ export abstract class ActorDoorBase<B extends SpriteInterface | MeshInterface = 
 The 2D door defines a sprite within it with three animations (open and close). We extend `ActorDoorBase` and use the *SpriteInterface* generic type to declare this actor is built by sprites.
 in the [onSpawn](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html#onSpawn) method we initialize it.
 
-**src/actors-door/door-2d.ts**
+**src/actor-doors/door-2d.ts**
 ```
 @Actor()
 export class ActorDoor2D extends ActorDoorBase<SpriteInterface> {
@@ -222,7 +222,7 @@ export class ActorDoor2D extends ActorDoorBase<SpriteInterface> {
 
 Same process for the 3D door.
 
-**src/actors-door/door-3d.ts**
+**src/actor-doors/door-3d.ts**
 ```
 @Actor()
 export class ActorDoor3D extends ActorDoorBase<MeshInterface> {
@@ -258,7 +258,7 @@ We are using here a setup object to receive the door instance, and we are defini
 
 Finally, if the robot isn't moving and it is in front of the door, it is switched to the `StateEnterDoor` state.
 
-**src/actors-robot/state-door-seek.ts**
+**src/actor-robots/state-door-seek.ts**
 ```
 @ActorState()
 export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase }, SceneInterface, ActorRobotBase> {
@@ -303,7 +303,7 @@ export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase }, 
 
 When the action starts in the [onPlay](https://khanonjs.com/api-docs/classes/decorators_actor_actor_action.ActorActionInterface.html#onPlay) method, we set the *idle* animation. In the [onLoopUpdate](https://khanonjs.com/api-docs/classes/decorators_actor_actor_action.ActorActionInterface.html#onLoopUpdate) we run the logic of moving the actor to the tap direction, apply `lookLeft` or `lookRight` direction, and play the *walking* animation.
 
-**src/actors-robot/action-pointer-move.ts**
+**src/actor-robots/action-pointer-move.ts**
 ```
 @ActorAction()
 export class ActionPointerMove extends ActorActionInterface<{
@@ -369,7 +369,7 @@ export class ActionPointerMove extends ActorActionInterface<{
 
 The final state is `StateEnterDoor`, which plays a jump animation and sends the `FINISH_STAGE` notification calling the [KJS.Notify.send](https://khanonjs.com/api-docs/functions/kjs.KJS.Notify.send.html) method.
 
-**src/actors-robot/state-enter-door.ts**
+**src/actor-robots/state-enter-door.ts**
 ```
 @ActorState()
 export class StateEnterDoor extends ActorStateInterface<{ door: ActorDoorBase }, SceneInterface, ActorRobotBase> {
@@ -405,7 +405,7 @@ In their decorator props they have to declare the states and actions they will u
 
 The [t](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html#t) property (also [transform](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html#transform) property) is a shortcut to all transform methods of the actor's body. The actor [body](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html#body) is the main sprite or mesh composing it, and it is assigned by the [setBody](https://khanonjs.com/api-docs/classes/decorators_actor.ActorInterface.html#setBody) method.
 
-**src/actors-robot/robot-2d.ts**
+**src/actor-robots/robot-2d.ts**
 ```
 @Actor({
   states: [
@@ -454,7 +454,7 @@ export class ActorRobot2D extends ActorRobotBase<SpriteInterface> {
 
 The robot 3D is rotated in the *onLoopUpdate* method.
 
-**src/actors-robot/robot-3d.ts**
+**src/actor-robots/robot-3d.ts**
 ```
 @Actor({
   states: [

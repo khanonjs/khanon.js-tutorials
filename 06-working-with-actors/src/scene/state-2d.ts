@@ -1,7 +1,7 @@
 import { SceneState } from '@khanonjs/engine'
 
-import { ActorDoor2D } from '../actors-door/door-2d'
-import { ActorRobot2D } from '../actors-robot/robot-2d'
+import { ActorDoor2D } from '../actor-doors/door-2d'
+import { ActorRobot2D } from '../actor-robots/robot-2d'
 import { SceneStateBase } from './state-base'
 
 @SceneState({

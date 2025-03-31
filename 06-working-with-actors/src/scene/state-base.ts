@@ -1,8 +1,8 @@
 import { SceneStateInterface } from '@khanonjs/engine'
 
-import { ActorDoorBase } from '../actors-door/door-base'
-import { ActorRobotBase } from '../actors-robot/robot-base'
-import { StateDoorSeek } from '../actors-robot/state-door-seek'
+import { ActorDoorBase } from '../actor-doors/door-base'
+import { ActorRobotBase } from '../actor-robots/robot-base'
+import { StateDoorSeek } from '../actor-robots/state-door-seek'
 
 export abstract class SceneStateBase extends SceneStateInterface {
     abstract robot: ActorRobotBase

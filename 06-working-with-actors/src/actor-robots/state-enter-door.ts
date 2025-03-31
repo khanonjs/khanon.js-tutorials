@@ -5,7 +5,7 @@ import {
   SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoorBase } from '../actors-door/door-base'
+import { ActorDoorBase } from '../actor-doors/door-base'
 import { Messages } from '../scene/messages'
 import { ActorRobotBase } from './robot-base'
 

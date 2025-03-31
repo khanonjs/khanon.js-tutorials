@@ -4,7 +4,7 @@ import {
   SceneInterface
 } from '@khanonjs/engine'
 
-import { ActorDoorBase } from '../actors-door/door-base'
+import { ActorDoorBase } from '../actor-doors/door-base'
 import { ActionPointerMove } from './action-pointer-move'
 import { ActorRobotBase } from './robot-base'
 import { StateEnterDoor } from './state-enter-door'
