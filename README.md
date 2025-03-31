@@ -6,35 +6,35 @@ Clone this repo to your local drive to get access to all tutorials.
 
 Khanon.js website: [https://www.khanonjs.com](https://www.khanonjs.com)
 
-## 01 Preparing a blank project
+## Preparing a blank project
 Start a project from scratch with the minimum codebase.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
 
-## 02 Starting a scene
+## Starting a scene
 Start the first *scene* and switch to different *scene states*.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/02-starting-scene).
 
-## 03 App workflow
+## App workflow
 
 Manage the workflow of an application simulating a video game workflow.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/03-app-workflow).
 
-## 04 Loading 2D sprites and particles
+## Loading 2D sprites and particles
 
 Load 2D sprites and particles into the scene.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/04-loading-sprites).
 
-## 05 Creating a 3D scene
+## Creating a 3D scene
 
 Compose a 3D scene and add 3D animated characters.
 
 This tutorial can be found [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/05-creating-3d-scene).
 
-## 06 Working with actors
+## Working with actors
 
 Work with actors. Build them, play actions and states.
 
