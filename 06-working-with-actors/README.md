@@ -600,6 +600,6 @@ We can run the app now. The scene starts by the `SceneState2D` 2D robot and door
 
 We've seen how actors work, how to execute different logic blocks depending on their state, and how to execute actions to modify them due to different events.
 
-It is important to understand and use the powerful object-oriented programming features that typescript bring. Using heritages in a smart way to reduce code duplicities and fasten up the development process. As you can see, scenes, states, actors, are all modular, being able to add, remove, and interchage any of them with a minimum impact.
+It is important to understand and use the powerful object-oriented programming features that typescript bring. Using inheritance in a smart way to reduce code duplicities and fasten up the development process. As you can see, scenes, states, actors, are all modular, being able to add, remove, and interchage any of them with a minimum impact.
 
 Using generics to apply custom types to different properties of our classes will give us a the flexibility to use our own classes within Khanon.js objects.
