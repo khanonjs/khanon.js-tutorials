@@ -242,6 +242,7 @@ export class ActorDoor3D extends ActorDoorBase<MeshInterface> {
     this.t.scaling.setAll(0.7)
     this.t.position.set(1.5, 1, 0)
     this.body.playAnimation(this.animationId_Close)
+    this.body.setMaterialTransparencyMode(BABYLON.Material.MATERIAL_ALPHABLEND)
     this.t.rotationQuaternion = new BABYLON.Vector3(0.05, -Math.PI / 2 + 0.3, 0).toQuaternion()
   }
 }
@@ -487,6 +488,7 @@ export class ActorRobot3D extends ActorRobotBase<MeshInterface> {
     this.setBody(this.Body)
     this.t.scaling.setAll(0.2)
     this.t.position.set(-1.5, 1, 0)
+    this.body.setMaterialTransparencyMode(BABYLON.Material.MATERIAL_ALPHABLEND)
   }
 
   lookRight(): void {

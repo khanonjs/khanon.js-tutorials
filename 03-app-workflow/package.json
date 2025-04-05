@@ -24,6 +24,6 @@
   "dependencies": {
     "@babylonjs/core": "~8.0.1",
     "@babylonjs/gui": "~8.0.1",
-    "@khanonjs/engine": "0.1.47-alpha.0"
+    "@khanonjs/engine": "0.1.48-alpha.0"
   }
 }

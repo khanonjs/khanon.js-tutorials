@@ -43,6 +43,7 @@ export class ActorRobot3D extends ActorRobotBase<MeshInterface> {
     this.setBody(this.Body)
     this.t.scaling.setAll(0.2)
     this.t.position.set(-1.5, 1, 0)
+    this.body.setMaterialTransparencyMode(BABYLON.Material.MATERIAL_ALPHABLEND)
   }
 
   lookRight(): void {

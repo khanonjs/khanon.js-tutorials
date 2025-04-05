@@ -1,6 +1,7 @@
 import * as BABYLON from '@babylonjs/core'
 import {
   Actor,
+  Logger,
   Mesh,
   MeshConstructor,
   MeshInterface
@@ -26,6 +27,7 @@ export class ActorDoor3D extends ActorDoorBase<MeshInterface> {
     this.t.scaling.setAll(0.7)
     this.t.position.set(1.5, 1, 0)
     this.body.playAnimation(this.animationId_Close)
+    this.body.setMaterialTransparencyMode(BABYLON.Material.MATERIAL_ALPHABLEND)
     this.t.rotationQuaternion = new BABYLON.Vector3(0.05, -Math.PI / 2 + 0.3, 0).toQuaternion()
   }
 }
