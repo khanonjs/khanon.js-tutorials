@@ -6,7 +6,7 @@ Clone this repo to your local drive to get access to all tutorials.
 
 Khanon.js website: [https://www.khanonjs.com](https://www.khanonjs.com)
 
-___
+<hr style="border:2px solid gray">
 
 Before starting install the [CLI](https://www.npmjs.com/package/@khanonjs/cli):
 
