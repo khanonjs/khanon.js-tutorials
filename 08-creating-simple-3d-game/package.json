@@ -4,26 +4,18 @@
   "description": "Khanon.js tutorial - 08 Creating a simple 3D game",
   "main": "index.html",
   "scripts": {
-    "start": "webpack serve --port 8080 --config webpack.dev.js",
-    "start:prod": "webpack serve --port 8080 --config webpack.prod.js",
-    "build": "npm run build:clean && webpack --config webpack.dev.js",
-    "build:prod": "npm run build:clean && webpack --config webpack.prod.js",
-    "build:clean": "rimraf dist"
+    "start": "khanon --start-dev",
+    "start:prod": "khanon --start-prod",
+    "build": "khanon --build-dev",
+    "build:prod": "khanon --build-prod"
   },
   "devDependencies": {
-    "@babylonjs/inspector": "~8.0.1",
-    "copy-webpack-plugin": "^12.0.2",
-    "html-webpack-plugin": "^5.3.1",
-    "rimraf": "^3.0.2",
-    "ts-loader": "^9.1.2",
-    "typescript": "^5.3.3",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^6.0.1",
-    "webpack-dev-server": "^5.2.0"
+    "@babylonjs/inspector": "^8.0.1",
+    "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@babylonjs/core": "~8.0.1",
-    "@babylonjs/gui": "~8.0.1",
-    "@khanonjs/engine": "0.1.48-alpha.0"
+    "@babylonjs/core": "^8.0.1",
+    "@babylonjs/gui": "^8.0.1",
+    "@khanonjs/engine": "^0.2.10"
   }
 }

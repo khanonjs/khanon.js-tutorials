@@ -10,7 +10,7 @@ import { Messages } from '../scene/messages'
 import { ActorRobotBase } from './robot-base'
 
 @ActorState()
-export class StateEnterDoor extends ActorStateInterface<{ door: ActorDoorBase }, SceneInterface, ActorRobotBase> {
+export class StateEnterDoor extends ActorStateInterface<{ door: ActorDoorBase }, ActorRobotBase, SceneInterface> {
   onStart() {
     this.actor.t.position.x = this.setup.door.t.position.x
     this.actor.body.playAnimation(this.actor.animationId_Jump)

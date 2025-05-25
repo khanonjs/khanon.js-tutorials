@@ -1,7 +1,7 @@
 import * as BABYLON from '@babylonjs/core'
 import {
   Actor,
-  Helper,
+  KJS,
   Mesh,
   MeshConstructor,
   MeshInterface
@@ -58,7 +58,7 @@ export class ActorRobot3D extends ActorRobotBase<MeshInterface> {
 
   onLoopUpdate(delta: number): void {
     // Rotate de actor to the desired direction
-    this.rotationVector.y = Helper.Maths.increaseValueWithInertia(this.rotationVector.y, this.rotY, 0.1, 1)
+    this.rotationVector.y = KJS.Maths.increaseValueWithInertia(this.rotationVector.y, this.rotY, 0.1, 1)
     this.t.rotationQuaternion = this.rotationVector.toQuaternion()
   }
 }

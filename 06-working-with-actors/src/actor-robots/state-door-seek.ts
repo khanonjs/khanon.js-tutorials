@@ -10,7 +10,7 @@ import { ActorRobotBase } from './robot-base'
 import { StateEnterDoor } from './state-enter-door'
 
 @ActorState()
-export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase }, SceneInterface, ActorRobotBase> {
+export class StateDoorSeek extends ActorStateInterface<{ door: ActorDoorBase }, ActorRobotBase, SceneInterface> {
   DIST_ENTER_DOOR = 0.3
 
   onStart() {
