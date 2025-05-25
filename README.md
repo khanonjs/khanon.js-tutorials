@@ -12,7 +12,7 @@ Before starting install the [CLI](https://www.npmjs.com/package/@khanonjs/cli):
 
 ----
 
-## Preparing a blank project
+## Creating a blank project
 Start a project from scratch with the minimum codebase.
 
 Repository and documentation [here](https://github.com/khanonjs/khanon.js-tutorials/tree/main/01-blank-project).
