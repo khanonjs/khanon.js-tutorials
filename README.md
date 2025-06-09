@@ -1,6 +1,6 @@
 # Overview
 
-Tutorial series to see how to use [Khanon.js](https://www.npmjs.com/package/@khanonjs/engine), a typescript game engine extending [Babylon.js](https://www.babylonjs.com/)
+Tutorial series to see how to use [Khanon.js](https://www.npmjs.com/package/@khanonjs/engine), a typescript games framework extending [Babylon.js](https://www.babylonjs.com/)
 
 Clone this repo to your local drive to get access to all tutorials.
 
