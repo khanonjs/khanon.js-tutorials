@@ -10,12 +10,12 @@
     "build:prod": "khanon --build-prod"
   },
   "devDependencies": {
-    "@babylonjs/inspector": "^8.0.1",
+    "@babylonjs/inspector": "^8.17.0",
     "typescript": "^5.3.3"
   },
   "dependencies": {
-    "@babylonjs/core": "^8.0.1",
-    "@babylonjs/gui": "^8.0.1",
-    "@khanonjs/engine": "^0.2.10"
+    "@babylonjs/core": "^8.17.0",
+    "@babylonjs/gui": "^8.17.0",
+    "@khanonjs/engine": "^0.2.16"
   }
 }
